@@ -1,0 +1,156 @@
+<html>
+    <head><title>Alvaro de las Heras</title>
+    
+        <style>
+            body{ 
+                background:lightgray;
+            }
+			pre {
+				margin: auto;
+				border-style: solid;
+				border-color: darkgrey;
+				padding: 15px;
+				min-width:100px;
+				display: inline-block
+			}
+			.asignaciones {
+				color:yellow;
+				font-weight:bolder;
+			}           .palabraReservada {
+                color:blue;
+                font-weight:bolder;
+            }
+            .comentario {
+                color:green;
+            }
+			.nombreFuncion {
+				color:white;
+                font-weight:bolder;
+			}
+			.nombreVariable {
+				color:yellow;
+			}
+			.tipoDatos {
+				color:red;
+			}
+			.signoSeparadorTerminador {
+				color:blue;
+			}
+			.parentesisOperadores {
+			    font-weight:bolder;
+			}
+			.beginEnd {
+				color:orange;
+				font-weight:bolder;
+			}
+			.numeros {
+				color:blue;
+			}
+			.cadenas {
+				color:purple;
+				 font-style: italic;
+			}
+        
+			.asignaciones {
+				color:yellow;
+				font-weight:bolder;
+			}           
+			.palabraReservada {
+                color:blue;
+                font-weight:bolder;
+            }
+            .comentario {
+                color:darkgreen;
+            }
+			.nombreFuncion {
+				color:white;
+                font-weight:bolder;
+			}
+			.nombreVariable {
+				color:yellow;
+			}
+			.tipoDatos {
+				color:red;
+			}
+			.signoSeparadorTerminador {
+				color:blue;
+			}
+			.parentesisOperadores {
+			    font-weight:bolder;
+			}
+			.beginEnd {
+				color:orange;
+				font-weight:bolder;
+			}
+			.numeros {
+				color:blue;
+			}
+			.cadenas {
+				color:purple;
+				 font-style: italic;
+			}
+        </style>
+    
+    
+    </head>
+    <body>
+        <h1>C&oacute;digo formateado del fichero dado</h1>
+        <code>
+            <pre><span class="comentario">/***
+
+    @author: Antonio Moratilla
+    @description: Imprimir los números de fibonacci hasta pasar un umbral
+    @target: comprobar la sintaxis de un lenguaje
+
+    ***/
+</span>
+<span class="palabraReservada">include</span> printflib<span class="signoSeparadorTerminador">;</span>
+
+<span class="palabraReservada">function </span><span class="nombreFuncion">main</span><span class="parentesisOperadores">(</span><span class="parentesisOperadores">)</span>:<span class="tipoDatos">void
+</span><span class="beginEnd">begin
+</span>    <span class="tipoDatos">numero </span><span class="nombreVariable">umbral</span><span class="asignaciones">:=</span><span class="numeros">100</span><span class="signoSeparadorTerminador">;</span>  <span class="comentario">//establecemos el umbral hasta el que calcularemos fibonacci
+    </span><span class="nombreFuncion">imprimir</span> <span class="parentesisOperadores">(</span><span class="cadenas">"Iniciando el cálculo de Fibonacci"</span><span class="parentesisOperadores">)</span><span class="signoSeparadorTerminador">;</span>
+    <span class="tipoDatos">cadena </span><span class="nombreVariable">valores</span> <span class="asignaciones">:=</span> <span class="nombreFuncion">fibonacci</span><span class="parentesisOperadores">(</span><span class="nombreVariable">umbral</span><span class="parentesisOperadores">)</span><span class="signoSeparadorTerminador">;</span>  <span class="comentario">/*llamamos a la función, y a ver si explota...*/
+    </span><span class="nombreFuncion">imprimir</span> <span class="parentesisOperadores">(</span><span class="nombreVariable">valores</span> <span class="parentesisOperadores">+</span> <span class="cadenas">"\nFin de fibonacci."</span><span class="parentesisOperadores">)</span><span class="signoSeparadorTerminador">;</span>
+    <span class="comentario">//fin del /*programa*/
+</span><span class="beginEnd">end
+</span>
+<span class="comentario">/**
+    Función iterativa que se encarga de calcular fibonacci y generar el texto asociado
+**/
+</span><span class="palabraReservada">function </span><span class="nombreFuncion">fibonacci</span><span class="parentesisOperadores">(</span><span class="tipoDatos">numero </span><span class="nombreVariable">umbral</span><span class="parentesisOperadores">)</span>:<span class="tipoDatos">cadena
+</span><span class="beginEnd">begin
+</span>    <span class="tipoDatos">numero </span><span class="nombreVariable">numeroFibonacciInicio</span><span class="asignaciones">:=</span><span class="numeros">0</span><span class="signoSeparadorTerminador">;</span>
+    <span class="tipoDatos">numero </span><span class="nombreVariable">numeroFibonacciSegundo</span><span class="asignaciones">:=</span><span class="numeros">1</span><span class="signoSeparadorTerminador">;</span>
+    <span class="tipoDatos">numero </span><span class="nombreVariable">ResultadoFibonacci</span><span class="asignaciones">:=</span><span class="numeros">0</span><span class="signoSeparadorTerminador">;</span>
+
+    <span class="tipoDatos">cadena </span><span class="nombreVariable">temporal</span> <span class="asignaciones">:=</span> <span class="cadenas">"Serie Fibonacci: "</span> 
+                        <span class="parentesisOperadores">+</span> <span class="nombreFuncion">aCadena</span><span class="parentesisOperadores">(</span><span class="nombreVariable">numeroFibonacciInicio</span><span class="parentesisOperadores">)</span> 
+                        <span class="parentesisOperadores">+</span> <span class="cadenas">", "</span> 
+                        <span class="parentesisOperadores">+</span> <span class="nombreFuncion">aCadena</span><span class="parentesisOperadores">(</span><span class="nombreVariable">numeroFibonacciSegundo</span><span class="parentesisOperadores">)</span><span class="signoSeparadorTerminador">;</span>
+
+    <span class="palabraReservada">while</span> <span class="parentesisOperadores">(</span><span class="nombreVariable">ResultadoFibonacci</span><span class="parentesisOperadores"><</span><span class="nombreVariable">umbral</span><span class="parentesisOperadores">)</span>
+<span class="beginEnd">    begin
+</span>        <span class="nombreVariable">ResultadoFibonacci</span><span class="asignaciones">:=</span><span class="nombreVariable">numeroFibonacciInicio</span>
+                            <span class="parentesisOperadores">+</span> <span class="nombreVariable">numeroFibonacciSegundo</span><span class="signoSeparadorTerminador">;</span>
+        <span class="nombreVariable">temporal</span> <span class="asignaciones">:=</span> <span class="nombreVariable">temporal</span> <span class="parentesisOperadores">+</span> <span class="cadenas">", "</span> <span class="parentesisOperadores">+</span> <span class="nombreFuncion">aCadena</span><span class="parentesisOperadores">(</span><span class="nombreVariable">ResultadoFibonacci</span><span class="parentesisOperadores">)</span><span class="signoSeparadorTerminador">;</span>
+        <span class="nombreVariable">numeroFibonacciInicio</span> <span class="asignaciones">:=</span> <span class="nombreVariable">numeroFibonacciSegundo</span><span class="signoSeparadorTerminador">;</span>  <span class="comentario">//actualizo en cada iteración
+        </span><span class="nombreVariable">numeroFibonacciSegundo</span> <span class="asignaciones">:=</span> <span class="nombreVariable">ResultadoFibonacci</span><span class="signoSeparadorTerminador">;</span>
+    <span class="beginEnd">end
+</span>
+    <span class="palabraReservada">devolver</span><span class="parentesisOperadores">(</span><span class="nombreVariable">temporal</span><span class="parentesisOperadores">)</span><span class="signoSeparadorTerminador">;</span> <span class="comentario">//devolvemos el resultado.
+</span><span class="beginEnd">end
+</span>
+<span class="palabraReservada">function </span><span class="nombreFuncion">imprimir</span><span class="parentesisOperadores">(</span><span class="tipoDatos">cadena </span><span class="nombreVariable">texto</span><span class="parentesisOperadores">)</span>:<span class="tipoDatos">void
+</span><span class="beginEnd">begin
+</span>    <span class="nombreFuncion">printf</span><span class="parentesisOperadores">(</span><span class="nombreVariable">texto</span><span class="parentesisOperadores">)</span><span class="signoSeparadorTerminador">;</span>
+<span class="beginEnd">end
+</span>
+<span class="palabraReservada">function </span><span class="nombreFuncion">aCadena</span><span class="parentesisOperadores">(</span><span class="tipoDatos">numero </span><span class="nombreVariable">x</span><span class="parentesisOperadores">)</span>:<span class="tipoDatos">cadena
+</span><span class="beginEnd">begin
+</span>    <span class="palabraReservada">devolver</span> <span class="parentesisOperadores">(</span> <span class="nombreFuncion">sprintf</span><span class="parentesisOperadores">(</span><span class="cadenas">"%d"</span><span class="signoSeparadorTerminador">,</span><span class="nombreVariable">x</span><span class="parentesisOperadores">)</span><span class="parentesisOperadores">)</span><span class="signoSeparadorTerminador">;</span>
+<span class="beginEnd">end
+</span></pre>
+        </code>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+version: '3.3'
+services:
+  database_api:
+    container_name: database_api
+    build: ./database_api/
+    volumes: 
+      - ./database_api/:/database_api
+    ports:
+      - 8080:8080
+    depends_on:
+      - "mongo"
+  web:
+    container_name: web
+    build: ./web/
+    volumes: 
+      - ./web/:/web
+    ports:
+      - 80:80
+    depends_on:
+      - "mongo"
+      - "database_api"
+  mongo:
+    container_name: mongo
+    image: mongo:4.2.2-bionic
+    restart: always
+    volumes: 
+      - ./mongo/setup:/docker-entrypoint-initdb.d
+      - ./mongo/data:/data/db
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: smart_bed
+    command: mongod --auth

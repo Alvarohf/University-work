@@ -1,0 +1,129 @@
+graph properties{
+	node [fontname="Arial"]; 
+	edge [fontname="Arial",fontsize=12]
+
+	//node_class
+	node [shape=ellipse,style=filled,fillcolor=lightseagreen,fontsize=20,fontname="Arial"]
+	"class_ambito"[label="Ambito"];
+	"class_animo"[label="Animo"];
+	"class_ascenso"[label="Ascenso"];
+	"class_clasico"[label="Clasico"];
+	"class_clasificacion"[label="Clasificacion"];
+	"class_competiciondeportiva"[label="CompeticionDeportiva"];
+	"class_contexto"[label="Contexto"];
+	"class_derbi"[label="Derbi"];
+	"class_descenso"[label="Descenso"];
+	"class_empate"[label="Empate"];
+	"class_empateprorroga"[label="EmpateProrroga"];
+	"class_enfasis"[label="Enfasis"];
+	"class_entero"[label="Entero"];
+	"class_falta"[label="Falta"];
+	"class_faltas"[label="Faltas"];
+	"class_futbol"[label="Futbol"];
+	"class_gol"[label="Gol"];
+	"class_gol"[label="Gol"];
+	"class_goles"[label="Goles"];
+	"class_goles"[label="Goles"];
+	"class_incidencia"[label="Incidencia"];
+	"class_jugada"[label="Jugada"];
+	"class_jugada"[label="Jugada"];
+	"class_jugadas"[label="Jugadas"];
+	"class_jugador"[label="Jugador"];
+	"class_lganav"[label="LganaV"];
+	"class_lganavpenaltis"[label="LganaVPenaltis"];
+	"class_lganavprorroga"[label="LganaVProrroga"];
+	"class_minuto"[label="Minuto"];
+	"class_minuto"[label="Minuto"];
+	"class_narra"[label="Narra"];
+	"class_otros"[label="Otros"];
+	"class_parte1"[label="Parte1"];
+	"class_parte1"[label="Parte1"];
+	"class_parte2"[label="Parte2"];
+	"class_parte2"[label="Parte2"];
+	"class_partido"[label="Partido"];
+	"class_penalti"[label="Penalti"];
+	"class_penaltis"[label="Penaltis"];
+	"class_primera"[label="Primera"];
+	"class_propiedadesplantilla"[label="PropiedadesPlantilla"];
+	"class_prorroga"[label="Prorroga"];
+	"class_prorroga1"[label="Prorroga1"];
+	"class_prorroga2"[label="Prorroga2"];
+	"class_resultado"[label="Resultado"];
+	"class_segunda"[label="Segunda"];
+	"class_sintarjetas"[label="SinTarjetas"];
+	"class_suspendido"[label="Suspendido"];
+	"class_tandapenaltis"[label="TandaPenaltis"];
+	"class_tarjeta"[label="Tarjeta"];
+	"class_tarjetas"[label="Tarjetas"];
+	"class_temporalidad"[label="Temporalidad"];
+	"class_tercera"[label="Tercera"];
+	"class_tipojuego"[label="TipoJuego"];
+	"class_vganal"[label="VganaL"];
+	"class_vganalpenaltis"[label="VganaLPenaltis"];
+	"class_vganalprorroga"[label="VganaLProrroga"];
+
+	//edge_property
+	edge[style=dashed,len=3,color=grey];
+
+	//edge_indirect_use and edge_class
+
+	//edge_inheritance
+	"class_propiedadesplantilla" -- "class_ambito" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_enfasis" -- "class_animo" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_contexto" -- "class_ascenso" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_contexto" -- "class_clasico" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_enfasis" -- "class_clasificacion" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_ambito" -- "class_competiciondeportiva" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_partido" -- "class_contexto" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_contexto" -- "class_derbi" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_contexto" -- "class_descenso" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_otros" -- "class_empate" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_otros" -- "class_empateprorroga" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_partido" -- "class_enfasis" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_entero" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_falta" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_faltas" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_competiciondeportiva" -- "class_futbol" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_gol" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_enfasis" -- "class_gol" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_goles" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_enfasis" -- "class_goles" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_enfasis" -- "class_incidencia" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_jugada" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_enfasis" -- "class_jugada" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_jugadas" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_enfasis" -- "class_jugador" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_otros" -- "class_lganav" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_otros" -- "class_lganavpenaltis" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_otros" -- "class_lganavprorroga" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_enfasis" -- "class_minuto" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_temporalidad" -- "class_minuto" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_partido" -- "class_narra" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_partido" -- "class_otros" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_parte1" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_temporalidad" -- "class_parte1" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_parte2" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_temporalidad" -- "class_parte2" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_futbol" -- "class_partido" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_penalti" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_penaltis" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_contexto" -- "class_primera" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_prorroga" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_prorroga1" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_prorroga2" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_enfasis" -- "class_resultado" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_contexto" -- "class_segunda" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_sintarjetas" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_otros" -- "class_suspendido" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_tandapenaltis" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_tarjeta" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_narra" -- "class_tarjetas" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_partido" -- "class_temporalidad" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_contexto" -- "class_tercera" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_enfasis" -- "class_tipojuego" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_otros" -- "class_vganal" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_otros" -- "class_vganalpenaltis" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_otros" -- "class_vganalprorroga" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+
+	//edge_relationship
+}

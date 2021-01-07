@@ -1,0 +1,37 @@
+graph domain{
+	node [fontname="Arial"]; 
+	edge [fontname="Arial",fontsize=12]
+
+	//node_class
+	node [shape=ellipse,style=filled,fillcolor=lightseagreen,fontsize=20,fontname="Arial"]
+	"http://know.dom.com/class#cosa"[label="Cosa"];
+	"http://know.dom.com/class#mesa"[label="Mesa"];
+	"http://know.dom.com/class#mueble"[label="Mueble"];
+
+	//node_property
+	node [shape=record,style=filled,fillcolor=lightgoldenrodyellow,fontsize=10,fontname="Arial"];
+	"http://know.dom.com/property#patas"[label="{patas|xsd:integer}"];
+	"http://know.dom.com/property#peso"[label="{peso|xsd:double}"];
+	"http://know.dom.com/property#precio"[label="{precio|xsd:double}"];
+	"http://know.dom.com/property#soporta"[label="{soporta|http://know.dom.com/class#Cosa}"];
+
+	//edge_property
+	edge[style=dashed,len=3,color=grey];
+	"http://know.dom.com/class#cosa" -- "http://know.dom.com/property#precio";
+	"http://know.dom.com/class#mesa" -- "http://know.dom.com/property#patas";
+	"http://know.dom.com/class#mesa" -- "http://know.dom.com/property#soporta";
+	"http://know.dom.com/class#mesa" -- "http://know.dom.com/property#peso";
+	"http://know.dom.com/class#mesa" -- "http://know.dom.com/property#precio";
+	"http://know.dom.com/class#mueble" -- "http://know.dom.com/property#peso";
+	"http://know.dom.com/class#mueble" -- "http://know.dom.com/property#precio";
+
+	//edge_indirect_use and edge_class
+	"http://know.dom.com/property#soporta" -- "http://know.dom.com/class#cosa"[style=dotted,arrowhead=vee,dir=forward,arrowsize=2,label="TypeOf"];
+	"http://know.dom.com/class#mesa" -- "http://know.dom.com/class#cosa" [ fontcolor=orangered, color=orangered, style=dashed,arrowhead=vee,dir=forward,arrowsize=2,label="soporta (0..n)"];
+
+	//edge_inheritance
+	"http://know.dom.com/class#mueble" -- "http://know.dom.com/class#mesa" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"http://know.dom.com/class#cosa" -- "http://know.dom.com/class#mueble" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+
+	//edge_relationship
+}

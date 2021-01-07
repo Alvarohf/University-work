@@ -1,0 +1,292 @@
+\documentclass [a4paper] {article}
+
+\usepackage[utf8]{inputenc}
+
+
+\title{\textbf{Práctica 2: Fundamentos de la ciencia de datos}}
+\author{Luis Alejandro Cabanillas, Alvaro de las Heras, Mohssin Nagib Najim}
+
+\begin{document}
+
+\maketitle
+
+\section{Ejercicio 1} En la primera parte se realizará un ejercicio en clase, con la ayuda del profesor, en el que se va a llevar a cabo un análisis
+de las asociaciones de los datos en R. En este ejercicio tendremos un conjunto de 6 sucesos a modo de cestas de la compra. Los sucesos elementales que podemos
+encontrarnos son {Pan}, {Agua}, {Leche}, {Naranjas} y {Café}.
+
+La muestra que hemos obtenido consta de seis sucesos:
+\begin{itemize}
+	\item \textbf{{Pan, Agua, Leche, Naranjas}}
+	\item \textbf{{Pan, Agua, Café, Leche}}
+	\item \textbf{{Pan, Agua, Leche}}
+        \item \textbf{{Pan, Café, Leche}}
+        \item \textbf{{Pan, Agua}}
+        \item \textbf{{Leche}}										 
+\end{itemize}
+
+\subsection{Instalación paquete arules} 
+Para la realización del ejercicio necesitaremos el paquete arules, que implementa el algoritmo apriori y las reglas de asociación en R. 
+Para ver si tenemos este paquete por defecto en R tendremos que ejecutar la siguiente instrucción:
+<<>>=
+getOption("defaultPackages")
+@
+
+Como podemos ver, no tenemos el paquete por defecto en R, es decir, no tenemos el paquete cargado cada vez que se inicia R. Para comprobar
+si tenemos instalado el paquete, ejecutamos el siguiente comando:
+<<>>=
+library()
+@
+Tenemos el paquete instalado; por lo que tenemos que cargarlo en el entorno actual:
+<<>>=
+library(arules)
+@
+
+Si no tuviésemos el paquete instalado, tenemos que seguir los siguientes pasos:
+\begin{itemize}
+	\item \textbf{1. Ir a la página web de CRAN Project.}: En la página de CRAN Project se puede acceder a los paquetes, que se pueden encontrar 
+                                                                																					ordenados por nombre. Cada paquete incluye los archivos binario y un manual de referencia.
+	\item \textbf{2. Descargar el archivo binario y el manual de referencia}: En este caso descargaremos la versión 1.6-4 del paquete.
+	\item \textbf{3. Ejecutar la orden en R para instalar el paquete}: Debemos ejecutar install.packages("ruta del paquete").
+    \item \textbf{4. Cargar el paquete en R}: Con la instrucción vista anteriormente en este documento library(arules).									 
+\end{itemize}
+
+Una vez tenemos el paquete instalado y cargado, podemos realizar el ejercicio.
+
+\subsection{Introducción de los datos de la muestra en R} 
+Lo primero que tenemos que hacer es introducir la muestra en una matriz, para poder trabajar con ella. En la matriz introduciremos unos y ceros en función de cada 
+suceso:
+<<>>=
+muestra <- Matrix(c(1,1,0,1,1,1,1,1,1,0,1,1,0,1,0,1,0,1,1,0,1,1,0,0,0,0,0,0,1,0),
+6,5,byrow=T,dimnames=list(c("suceso1","suceso2","suceso3","suceso4","suceso5","suceso6"),
+c("Pan","Agua","Cafe","Leche","Naranjas")),sparse=T)
+muestra
+@
+Ya tenemos la matriz con la muestra, a continuación deberemos prepararla para su análisis. 
+Para ello, la pasaremos a un formato nsparse y haremos la transpuesta:
+<<>>=
+muestraNGCMatrix <- as(muestra,"nsparseMatrix")
+transpmuestraNGCMatrix <- t(muestraNGCMatrix)
+transpmuestraNGCMatrix
+@
+
+Ahora deberemos convertir esta matriz en una serie de transacciones para poder ser usada por el algoritmo apriori. 
+Estas transacciones se corresponden a cada uno de los sucesos: Se pasan los ceros y unos a variables con el ID del suceso:
+<<>>=
+transacciones <- as(transpmuestraNGCMatrix,"transactions")
+transacciones
+inspect(transacciones)
+@
+
+Para ver datos estadísticos básicos sobre nuestros datos usamos el comando summary():
+<<>>=
+summary(transacciones)
+@
+
+\subsection{Aplicación del algoritmo apriori}
+Una vez tenemos los datos introducidos en R, ya podemos aplicar el algoritmo apriori para ver las asociaciones. Para aplicar este algoritmo deberemos 
+usar la instrucción apriori(datos,parameter=list(support=umbral de soporte,confidance=umbral de confianza)).
+
+Así, lo aplicamos sobre nuestros datos:
+<<>>=
+asociaciones <- apriori(transacciones,parameter=list(support=0.5,confidence=0.8))
+asociaciones
+inspect(asociaciones)
+@
+
+Podemos concluir que las asociaciones que cumplen los umbrales establecidos son 5.
+
+\section{Ejercicio 2} En esta segunda parte se nos pide desarrollar dos ejercicios, el primero consistirá en aplicar el procedimiento
+que se realizó en el ejercicio 1 para otros datos de muestra leídos desde un fichero .txt y la segunda parte consistira en desarrollar un
+enunciado y la solución de este realizando el analisis con R de asociación.
+
+\subsubsection{Análisis de datos muestra extras de coches} 
+En este ejercicio se nos pide, a partir de un .txt generado según los datos de muestra proporcionados
+en el enunciado sobre los extras que puede llevar un coche, resolver utilizando el algoritmo Apriori y obtener las asociaciones
+cuyo soporte sea igual o superior al 40% y cuya confianza sea igual o superior al 90%.
+
+Lo primero que haremos será cargar los datos del .txt que hemos generado a partir de los datos proporcionados en el enunciado, para esto
+utilizaremos el read.table organizándolo como una matriz. Los sucesos elementales que podemos
+encontrarnos son {X:Faros de Xenon}, {A: Alarma}, {T: Techo Solar}, {N: Navegador}, {B: Bluetooth} y {C: Control de Crucero}.
+
+La muestra que hemos obtenido consta de ocho sucesos:
+\begin{itemize}
+	\item \textbf{{X, C, N, B}}
+	\item \textbf{{X, T, B, C}}
+	\item \textbf{{N, C, X}}
+        \item \textbf{{N, T, X, B}}
+        \item \textbf{{X, C, B}}
+        \item \textbf{{N}}		
+		\item \textbf{{X, B, C}}	
+		\item \textbf{{T, A}}									 
+\end{itemize}
+
+<<>>=
+extras<-as.matrix(read.table("extras.txt"))
+extras
+@
+
+Al importar los datos vemos que se nos genera una matriz pero esta es de tipo lista por lo que tendremos que convertirla en matriz:
+<<>>=
+extrasM<-Matrix(extras, sparse=T)
+extrasM
+@
+
+Ahora pasaremos la matriz a matriz de patron dispersa:
+<<>>=
+extrasNGC<-as(extrasM, "nsparseMatrix")
+extrasNGC
+@
+
+Posteriormente sacaremos la traspuesta de la matriz generada anteriormente para sacar las transacciones:
+<<>>=
+transpExtras <- t(extrasNGC)
+transpExtras
+transacciones<-as(transpExtras, "transactions")
+transacciones
+@
+
+Podemos ver el numero de transacciones en filas y el numero de items que tenemos en columnas.
+
+Mostramos las estadísticas de las transacciones con summary, datos como los elementos más frecuentes, la distribucion
+del tamaño de los elementos, el minimo, la mediana y la media, entre otros:
+<<>>=
+summary(transacciones)
+@
+
+\subsubsection{Aplicación del algoritmo apriori}
+
+Aplicamos el algoritmo apriori para calcular las asociaciones, con un soporte de un 40 por ciento o superior y una confianza de un 80 por ciento o superior:
+<<>>=
+asociaciones<-apriori(transacciones,parameter=list(support=0.4, confidence=0.9))
+inspect(asociaciones)
+@
+
+Podemos ver que las asociaciones que cumplen las condiciones de soporte y confianza son 3.
+
+\subsection{Ejercicio 2.2}
+En este ejercicio el objetivo será encontrar las asociaciones de un conjunto de recetas, este conjunto de datos lo hemos obtenido en Kaggle.com. 
+La idea es encontrar que ingredientes se usan y como se asocian, siendo una modificación del típico problema de las cestas pero con datos reales,
+para ello emplearemos la biblioteca de \textbf{arules} junto \textbf{arulesViz} (visualización) y \textbf{jsonlite}  para la lectura.
+<<>>=
+install.packages("jsonlite")
+library("jsonlite")
+install.packages("arules")
+library("arules")
+install.packages("arulesViz")
+library("arulesViz")
+@
+Una vez instaladas y cargadas las bibliotecas hay que cargar nuestros datos, en este caso como es un JSON usaremos \textbf{readjson()} de jsonlite, sobre estos
+datos seleccionaremos el de los ingredientes, que es el que de verdad nos interesa.
+\subsubsection{Carga y preparación de los datos}
+<<>>=
+json<-read_json("Ingredientes.json", simplifyVector=TRUE)
+datos <- json$ingredients
+@
+Para dotar de mayor informacion a los datos le añadimos un ID que será el futuro ID de la transacción, para ello utilizamos \textbf{names()} para asignar valores a
+los nombres de los objetos (set) y \textbf{paste()} para generar una cadena de texto a partir de los vectores que generamos. Además como añadido hemos creado una 
+función para asignar un tipo aleatorio que será una variable cualitativa, con 5 posibles valores. Dentro de la función se usan vectores, números aleatorios enteros
+generados con \textbf{sample()} y el método \textbf{append()} para concatenar elementos al vector. Sin embargo, a diferencia del caso anterior añadiremos estos datos de forma distinta
+y después de haber creado las transacciones.
+<<>>=
+names(datos ) <- paste("receta-",c(1:length(datos )), sep = "")
+tipo <- function(d){
+    categorias <- c("mala","mediocre","normal","buena","recomendable")
+    tipos <- c()
+    for (i in 1:length(d)){
+        n_aleatorio <-sample(1:length(categorias), 1)
+        v<-categorias [n_aleatorio]
+        tipos <- append(tipos,v)
+    }
+    tipos 
+}
+@
+Con los datos ya listos el siguiente paso es crear las transacciones que se hace usando el método \textbf{as()} junto al parametro "transactions", al ser una entrada compatible (list)
+lo realiza sin problema. Con las transacciones creadas le asignamos ahora los datos que habíamos creado antes, modificando la información de las transacciones con la función
+\textbf{transactionInfo()}, en la que indicamos la transacción y el nombre de la columna. Como podemos observar la información y transacciones son correctas.
+<<>>=
+transacciones <- as(datos, "transactions")
+transactionInfo(transacciones)[["tipo"]] <- tipo(datos)
+transactionInfo(head(transacciones ,5))
+inspect(head(transacciones ,5))
+@
+<<transacciones, fig=TRUE, width=10, height=10>>=
+image(transacciones )
+@ Figura con las transacciones y distintos ingredientes
+\subsubsection{Algoritmos para la búsqueda asociaciones}
+A partir de las transacciones ahora es posible aplicar los distintos algoritmos para obtener las relaciones, a los que asignaremos distintos valores de confianza y soporte.
+El primer algoritmo que aplicaremos es el apriori, en el que a partir de una serie de pasos obtiene relaciones candidatas según un soporte y después una confianza, cuyo valores
+definirán la fuerza de la asociación. En este caso solo hay que introducir el soporte y la confianza.
+<<>>=
+asociaciones <- apriori(transacciones , parameter= list(support=0.05, confidence=0.3))
+inspect(asociaciones)
+@
+Si modificamos los parametros que reciben podemos seleccionar los tamaños de las transacciones quitando así las reglas con antecedentes vacíos (implican la aparación de esos objetos sin tener en cuenta otros).
+También si queremos tener más precisión podemos seleccionar que valores queremos tener a la izquierda o derecha de la relacion. Como se observa en
+el resultado hay pocas asociaciones que pasen el soporte que es relativamente bajo, esto quiere decir que las asociaciones no son fuertes, la razón de esto 
+se debe a que el conjunto de datos engloba una gran cantidad de diversas recetas, con platos de distintas culturas y tipos como puede ser la repostería.
+<<>>=
+asociaciones <- apriori(transacciones , parameter= list(minlen=2, support=0.05, confidence=0.3))
+inspect(asociaciones)
+buscamosSal <- apriori(transacciones , parameter= list(support=0.1, confidence=0.1),appearance = list(default="lhs",rhs="salt"))
+tenemosSal <- apriori(transacciones , parameter= list(support=0.1, confidence=0.1, minlen=2),appearance = list(default="rhs",lhs="salt"))
+inspect(sort(buscamosSal ))
+inspect(sort(tenemosSal ))
+@
+Arules además del algoritmo apriori implementa el algoritmo eclat y su variante weclat. Este algoritmo busca los objetos más frecuentes pero lo hace de forma más eficiente y escalable que el apriori.
+Su funcionamiento se basa en el método de búsqueda en profundidad frente a la búsqueda en anchura que ofrece el apriori, comenzando primero con los subsets más pequeños y aumentando hasta que no se puedan formar más.
+Además, nosotros hemos aplicado una versión similar en la que hemos aplicado pesos a cada transacción, teniendo en cuenta esos pesos en la búsqueda de candidatos. En este caso solo es necesario introducir el soporte, aunque
+se pueden introducir más parámetros, después podremos ver los valores y las imágenes. Con los candidatos generados solo queda aplicar \textbf{ruleInduction()} para generar las reglas de asociación. El resultado será el mismo que 
+el del algoritmo apriori con la diferencia del ahorro en coste, especialmente si trabajamos con muchos datos como ahora, pero Sweave no soporta tantos datos por lo que hemos cambiado el soporte.
+<<>>=
+# Asociaciones por Eclat
+candidatosECLAT <- eclat(transacciones ,parameter = list(support = 0.1, tidLists = TRUE))
+inspect(sort(candidatosECLAT ))
+asociacionesECLAT <- ruleInduction(candidatosECLAT , confidence = 0.3)
+inspect(asociacionesECLAT )
+@
+<<candEclat, fig=TRUE, width=10, height=10>>=
+image(tidLists(candidatosECLAT ))
+@
+<<>>=
+# Asociaciones por Weclat (Eclat con pesos)
+pesos <- runif(length(transacciones), 0.0, 1.0)
+transactionInfo(transacciones)[["weight"]] <- pesos
+inspect(head(transacciones ,5) )
+eclatPeso <- weclat(transacciones , parameter = list(support = 0.1),control = list(verbose = TRUE))
+inspect(sort(eclatPeso ))
+asociacionesECLATPeso <- ruleInduction(eclatPeso , confidence = 0.3)
+inspect(asociacionesECLATPeso )
+@
+\subsubsection{Visualización de las asociaciones}
+Para finalizar mostraremos los datos de forma gráfica utilizando la biblioteca arulesViz y sus métodos. 
+En este caso hemos elegido los métodos: 
+\begin{itemize}
+    \item \textbf{normal}: Muestra las reglas junto a su confianza, soporte y lift.
+	\item \textbf{paracoord}: Permite ver la relación de forma visual entre los miembros de ambos lados de la asociación.
+	\item \textbf{grouped}: Muestra en grupos con un tamaño proporacional al peso de las asociaciones.
+	\item \textbf{graph}: Crea un grafo con todas las asociaciones unidas entre sí. También se puede generar un grafo interactivo, que se incluye en la carpeta
+    bajo el nombre de \textbf{grafoInteractivo.html}.
+    \item \textbf{matriz3d}: Crea un gráfico en tres dimensiones relacionando los distintos valores de las reglas.
+\end{itemize}
+La principal conclusión que podemos sacar es que los ingredientes básicos son los que más se relacionan destacando la sal entre ellos, como
+se puede ver en los gráficos. Algo que tiene mucha lógica puesto que es la base de la cocina.
+<<asociaciones, fig=TRUE, width=10>>=
+plot(asociaciones , method="paracoord")
+@
+
+<<agrup1, fig=TRUE, width=10, height=10>>=
+plot(asociaciones , method="grouped");
+@
+<<grafo1, fig=TRUE, width=10, height=10>>=
+plot(asociaciones, method = "graph")
+@
+<<scatter1, fig=TRUE, width=10, height=10>>=
+plot(asociaciones )
+@
+<<scatter3d1, fig=TRUE, width=10, height=10>>=
+plot(asociaciones , method="matrix",engine="3d", measure="lift");
+@
+<<>>=
+plot(asociaciones , method = "graph",  engine = "htmlwidget")
+@ 
+\end{document}

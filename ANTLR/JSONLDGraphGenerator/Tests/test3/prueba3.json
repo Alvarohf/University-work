@@ -1,0 +1,226 @@
+{
+    "@context": {
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "languageProperty": {
+            "@id": "http://know.dom.com/langprop",
+            "language": {
+                "@type": "language_BCP47"
+            },
+            "gender": {
+                "@type": "xsd:string"
+            },
+            "number": {
+                "@type": "xsd:string"
+            },
+            "wordType": {
+                "@type": "xsd:string"
+            }
+        },
+        "property": {
+            "@id": "http://know.dom.com/property",
+            "name": {
+                "@type": "xsd:string",
+                "@mandatory": true
+            },
+            "label": {
+                "@container": "@language",
+                "@type": "language_BCP47",
+                "@mandatory": false
+            },
+            "typeOf": {
+                "@type": "xsd:types",
+                "@mandatory": true
+            },
+            "isList": {
+                "@type": "xsd:boolean",
+                "@mandatory": false,
+                "@value": false
+            },
+            "multiplicityMax": {
+                "@type": "xsd:string",
+                "@mandatory": false,
+                "@value": "1"
+            },
+            "multiplicityMin": {
+                "@type": "xsd:string",
+                "@mandatory": false,
+                "@value": "0"
+            },
+            "usedby": {
+                "@id": "http://know.dom.com/class",
+                "@container": "@list",
+                "@mandatory": false
+            },
+            "languageData": {
+                "@id": "http://know.dom.com/langprop",
+                "@container": "@list",
+                "@mandatory": false
+            }
+        },
+        "class": {
+            "@id": "http://know.dom.com/class",
+            "name": {
+                "@type": "xsd:string",
+                "@mandatory": true
+            },
+            "label": {
+                "@container": "@language",
+                "@type": "language",
+                "@mandatory": false
+            },
+            "inherits": {
+                "@id": "http://know.dom.com/class",
+                "@mandatory": false
+            },
+            "properties": {
+                "@id": "http://know.dom.com/property",
+                "@container": "@list",
+                "@mandatory": false
+            },
+            "oid": {
+                "@type": "xsd:integer",
+                "@mandatory": true
+            }
+        },
+        "relationship": {
+            "@id": "http://know.dom.com/relationship",
+            "name": {
+                "@type": "xsd:string",
+                "@mandatory": true
+            },
+            "label": {
+                "@container": "@language",
+                "@type": "language",
+                "@mandatory": false
+            },
+            "reverseName": {
+                "@type": "xsd:string",
+                "@mandatory": true
+            },
+            "labelReverseName": {
+                "@container": "@language",
+                "@type": "language",
+                "@mandatory": false
+            },
+            "from": {
+                "@id": "http://know.dom.com/class",
+                "@mandatory": true
+            },
+            "to": {
+                "@id": "http://know.dom.com/class",
+                "@mandatory": true
+            },
+            "properties": {
+                "@id": "http://know.dom.com/property",
+                "@container": "@list",
+                "@mandatory": false
+            }
+        }
+    },
+    "graphs": [
+        {
+            "domain": {
+                "@graph": [
+
+
+                    {
+                        "@id": "http://know.dom.com/class#Mueble",
+                        "name": "Mueble",
+                        "label": {
+                            "es": "Mueble",
+                            "eng": "Forniture"
+                        },
+                        "oid": [],
+                        "properties": [
+                            "http://know.dom.com/property#peso"
+                        ],
+                        "inherits": "http://know.dom.com/class#Cosa"
+                    },
+                    {
+                        "@id": "http://know.dom.com/property#peso",
+                        "name": "peso",
+                        "typeOf": "xsd:double",
+                        "label": {
+                            "es": "peso",
+                            "eng": "weight"
+                        },
+                        "usedby": [
+                            "http://know.dom.com/class#Mueble"
+                        ]
+                    },
+                    {
+                        "@id": "http://know.dom.com/class#Cosa",
+                        "name": "Cosa",
+                        "label": {
+                            "es": "Cosa",
+                            "eng": "Thing"
+                        },
+                        "oid": [],
+                        "properties": [
+                            "http://know.dom.com/property#precio"
+                        ]
+                    },
+                    {
+                        "@id": "http://know.dom.com/property#precio",
+                        "name": "precio",
+                        "typeOf": "xsd:double",
+                        "label": {
+                            "es": "precio",
+                            "eng": "price"
+                        },
+                        "usedby": [
+                            "http://know.dom.com/class#Cosa"
+                        ]
+                    },
+                    {
+                        "@id": "http://know.dom.com/class#Mesa",
+                        "name": "Mesa",
+                        "label": {
+                            "es": "Mesa",
+                            "eng": "Table"
+                        },
+                        "oid": [],
+                        "properties": [
+                            "http://know.dom.com/property#patas",
+                            "http://know.dom.com/property#soporta"
+                        ],
+                        "inherits": "http://know.dom.com/class#Mueble"
+                    },
+                    {
+                        "@id": "http://know.dom.com/property#patas",
+                        "name": "patas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "patas",
+                            "eng": "legs"
+                        },
+                        "usedby": [
+                            "http://know.dom.com/class#Mesa"
+                        ]
+                    },
+                    {
+                        "@id": "http://know.dom.com/property#soporta",
+                        "name": "soporta",
+                        "typeOf": "http://know.dom.com/class#Cosa",
+                        "isList": true,
+                        "multiplicityMax": "n",
+                        "multiplicityMin": "0",
+                        "label": {
+                            "es": "tiene",
+                            "eng": "has"
+                        },
+                        "usedby": [
+                            "http://know.dom.com/class#Mesa"
+                        ]
+                    }
+
+
+
+                ]
+            }
+        }
+    ]
+}
+
+
+

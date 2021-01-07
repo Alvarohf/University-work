@@ -1,0 +1,3 @@
+nombre,marca,rutafichero,rutaficherosalida,rutaficherografico,test
+primero,renault,./data/f1.json,./dots/fam.dot,./svg/fich1.svg,true
+segundo,ferrari,./data/f2.txt,./dots/fom.dot,./osvg/fich2.svg,false

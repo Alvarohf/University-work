@@ -1,0 +1,2294 @@
+{
+    "@context": {
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "languageProperty": {
+            "@id": "http://PdL.com/langprop",
+            "language": {
+                "@type": "language_BCP47"
+            },
+            "gender": {
+                "@type": "xsd:string"
+            },
+            "number": {
+                "@type": "xsd:string"
+            },
+            "wordType": {
+                "@type": "xsd:string"
+            }
+        },
+        "property": {
+            "@id": "http://PdL.com/property",
+            "name": {
+                "@type": "xsd:string",
+                "@mandatory": true
+            },
+            "label": {
+                "@container": "@language",
+                "@type": "language_BCP47",
+                "@mandatory": false
+            },
+            "typeOf": {
+                "@type": "xsd:types",
+                "@mandatory": true
+            },
+            "isList": {
+                "@type": "xsd:boolean",
+                "@mandatory": false,
+                "@value": false
+            },
+            "optional": {
+                "@type": "xsd:boolean",
+                "@mandatory": false,
+                "@value": false
+            },
+            "multiplicityMax": {
+                "@type": "xsd:string",
+                "@mandatory": false,
+                "@value": "1"
+            },
+            "multiplicityMin": {
+                "@type": "xsd:string",
+                "@mandatory": false,
+                "@value": "0"
+            },
+            "usedby": {
+                "@id": "http://PdL.com/class",
+                "@container": "@list",
+                "@mandatory": false
+            },
+            "languageData": {
+                "@id": "http://PdL.com/langprop",
+                "@container": "@list",
+                "@mandatory": false
+            }
+        },
+        "class": {
+            "@id": "http://PdL.com/class",
+            "name": {
+                "@type": "xsd:string",
+                "@mandatory": true
+            },
+            "label": {
+                "@container": "@language",
+                "@type": "language",
+                "@mandatory": false
+            },
+            "inherits": {
+                "@id": "http://PdL.com/class",
+                "@mandatory": false
+            },
+            "properties": {
+                "@id": "http://PdL.com/property",
+                "@container": "@list",
+                "@mandatory": false
+            }
+        },
+        "relationship": {
+            "@id": "http://PdL.com/relationship",
+            "name": {
+                "@type": "xsd:string",
+                "@mandatory": true
+            },
+            "label": {
+                "@container": "@language",
+                "@type": "language",
+                "@mandatory": false
+            },
+            "reverseName": {
+                "@type": "xsd:string",
+                "@mandatory": true
+            },
+            "labelReverseName": {
+                "@container": "@language",
+                "@type": "language",
+                "@mandatory": false
+            },
+            "from": {
+                "@id": "http://PdL.com/class",
+                "@mandatory": true
+            },
+            "to": {
+                "@id": "http://PdL.com/class",
+                "@mandatory": true
+            },
+            "properties": {
+                "@id": "http://PdL.com/property",
+                "@container": "@list",
+                "@mandatory": false
+            }
+        }
+    },
+    "graphs": [
+        {
+            "domain": {
+                "@graph": [
+                    {
+                        "@id": "http://PdL.com/class#JFCDATOS_C",
+                        "name": "JFCDATOS_C",
+                        "label": {
+                            "es": "jugador de campo en campeonato",
+                            "eng": "field player in championship"
+                        },
+                        
+                        "properties": [
+                            "http://PdL.com/property#CMinutosJugados",
+                            "http://PdL.com/property#CAsistencias",
+                            "http://PdL.com/property#CGoles",
+                            "http://PdL.com/property#CNombreCompeticion",
+                            "http://PdL.com/property#CPartidosJugados",
+                            "http://PdL.com/property#CPartidosSuplente",
+                            "http://PdL.com/property#CPartidosTitular",
+                            "http://PdL.com/property#Ctarjetas",
+                            "http://PdL.com/property#CTarjetasAmarillas",
+                            "http://PdL.com/property#CTarjetasRojas",
+                            "http://PdL.com/property#CPartidosGanados",
+                            "http://PdL.com/property#CPartidosPerdidos",
+                            "http://PdL.com/property#CPartidosEmpatados",
+                            "http://PdL.com/property#CEsGoleador",
+                            "http://PdL.com/property#CBuenJuego",
+                            "http://PdL.com/property#CAparicion",
+                            "http://PdL.com/property#CMaxPartidosSeguidosGol",
+                            "http://PdL.com/property#CMaxPartidosSeguidosGolRecord"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CMinutosJugados",
+                        "name": "CMinutosJugados",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "minutos jugados",
+                            "eng": "minutes played"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CAsistencias",
+                        "name": "CAsistencias",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "asistencias",
+                            "eng": "assits"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CGoles",
+                        "name": "CGoles",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "goles",
+                            "eng": "goals"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CNombreCompeticion",
+                        "name": "CNombreCompeticion",
+                        "typeOf": "xsd:string",
+                        "label": {
+                            "es": "nombre de la competici�n",
+                            "eng": "championship name"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CPartidosJugados",
+                        "name": "CPartidosJugados",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos jugados",
+                            "eng": "played matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CPartidosSuplente",
+                        "name": "CPartidosSuplente",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos suplente",
+                            "eng": "substitute matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CPartidosTitular",
+                        "name": "CPartidosTitular",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos titular",
+                            "eng": "titular matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#Ctarjetas",
+                        "name": "Ctarjetas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "n�mero de tarjetas",
+                            "eng": "number of cards"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CTarjetasAmarillas",
+                        "name": "CTarjetasAmarillas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "n�mero de tarjetas amarillas",
+                            "eng": "number of yellow cards"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CTarjetasRojas",
+                        "name": "CTarjetasRojas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "n�mero de tarjetas rojas",
+                            "eng": "number of red cards"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CPartidosGanados",
+                        "name": "CPartidosGanados",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos ganados",
+                            "eng": "won matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CPartidosPerdidos",
+                        "name": "CPartidosPerdidos",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos perdidos",
+                            "eng": "lost games"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CPartidosEmpatados",
+                        "name": "CPartidosEmpatados",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos empatados",
+                            "eng": "tied matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CEsGoleador",
+                        "name": "CEsGoleador",
+                        "typeOf": "xsd:boolean",
+                        "label": {
+                            "es": "es goleador",
+                            "eng": "is goal scorer"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CBuenJuego",
+                        "name": "CBuenJuego",
+                        "typeOf": "xsd:string",
+                        "label": {
+                            "es": "buen juego",
+                            "eng": "good game"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CAparicion",
+                        "name": "CAparicion",
+                        "typeOf": "xsd:string",
+                        "label": {
+                            "es": "aparici�n",
+                            "eng": "appearance"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CMaxPartidosSeguidosGol",
+                        "name": "CMaxPartidosSeguidosGol",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "m�ximo de partidos seguidos metiendo gol",
+                            "eng": "maximum number of matches in a row with a goal"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CMaxPartidosSeguidosGolRecord",
+                        "name": "CMaxPartidosSeguidosGolRecord",
+                        "typeOf": "xsd:boolean",
+                        "label": {
+                            "es": "R�cord absoluto en el campeonato de goles seguidos metiendo gol",
+                            "eng": "Absolute record in the championship of matches in a row scoring goal"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/class#JFCDATOS_H",
+                        "name": "JFCDATOS_H",
+                        "label": {
+                            "es": "jugador de campo datos historicos",
+                            "eng": ""
+                        },
+                        
+                        "properties": [
+                            "http://PdL.com/property#HMinutosJugados",
+                            "http://PdL.com/property#HAsistencias",
+                            "http://PdL.com/property#HGoles",
+                            "http://PdL.com/property#HPartidosJugados",
+                            "http://PdL.com/property#HPartidosSuplente",
+                            "http://PdL.com/property#HPartidosTitular",
+                            "http://PdL.com/property#HTarjetas",
+                            "http://PdL.com/property#HTarjetasAmarillas",
+                            "http://PdL.com/property#HTarjetasRojas",
+                            "http://PdL.com/property#HPartidosGanados",
+                            "http://PdL.com/property#HPartidosPerdidos",
+                            "http://PdL.com/property#HPartidosEmpatados"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HMinutosJugados",
+                        "name": "HMinutosJugados",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "minutos jugados",
+                            "eng": "minutes played"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HAsistencias",
+                        "name": "HAsistencias",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "asistencias",
+                            "eng": "assists"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HGoles",
+                        "name": "HGoles",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "goles",
+                            "eng": "goals"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HPartidosJugados",
+                        "name": "HPartidosJugados",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos jugados",
+                            "eng": "games played"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HPartidosSuplente",
+                        "name": "HPartidosSuplente",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos suplente",
+                            "eng": "substitute matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HPartidosTitular",
+                        "name": "HPartidosTitular",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos titular",
+                            "eng": "titular matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HTarjetas",
+                        "name": "HTarjetas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "n�mero de tarjetas",
+                            "eng": "number of cards"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HTarjetasAmarillas",
+                        "name": "HTarjetasAmarillas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "n�mero de tarjetas amarillas",
+                            "eng": "number of yellow cards"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HTarjetasRojas",
+                        "name": "HTarjetasRojas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "n�mero de tarjetas rojas",
+                            "eng": "number of red cards"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HPartidosGanados",
+                        "name": "HPartidosGanados",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos ganados",
+                            "eng": "won matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HPartidosPerdidos",
+                        "name": "HPartidosPerdidos",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos perdidos",
+                            "eng": "lost matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HPartidosEmpatados",
+                        "name": "HPartidosEmpatados",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos empatados",
+                            "eng": "tied matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFCDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/class#JF_PORTERO",
+                        "name": "JF_PORTERO",
+                        "label": {
+                            "es": "portero",
+                            "eng": "goalkeeper"
+                        },
+                        
+                        "properties": [
+                            "http://PdL.com/property#JFPDATOS_P",
+                            "http://PdL.com/property#JFPDATOS_C",
+                            "http://PdL.com/property#JFPDATOS_H"
+                        ],
+                        "inherits": "http://PdL.com/class#JUGADOR_FUTBOL"
+                    },
+                    {
+                        "@id": "http://PdL.com/property#JFPDATOS_P",
+                        "name": "JFPDATOS_P",
+                        "typeOf": "http://PdL.com/class#JFPDATOS_P",
+                        "label": {
+                            "es": "datos del partido de portero",
+                            "eng": "match data of the goalkeeper"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JF_PORTERO"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#JFPDATOS_C",
+                        "name": "JFPDATOS_C",
+                        "typeOf": "http://PdL.com/class#JFPDATOS_C",
+                        "label": {
+                            "es": "datos del portero en campeonato",
+                            "eng": "goalkeeper championship data"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JF_PORTERO"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#JFPDATOS_H",
+                        "name": "JFPDATOS_H",
+                        "typeOf": "http://PdL.com/class#JFPDATOS_H",
+                        "label": {
+                            "es": "datos hist�ricos de portero",
+                            "eng": "goalkeeper historical data"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JF_PORTERO"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/class#JFPDATOS_P",
+                        "name": "JFPDATOS_P",
+                        "label": {
+                            "es": "datos del partido de portero",
+                            "eng": "match data of the goalkeeper"
+                        },
+                        
+                        "properties": [
+                            "http://PdL.com/property#PDecisivo",
+                            "http://PdL.com/property#PExpulsado",
+                            "http://PdL.com/property#PLesionado",
+                            "http://PdL.com/property#PMinutoLesion",
+                            "http://PdL.com/property#PMinutoExpulsion",
+                            "http://PdL.com/property#PMinutosJugados",
+                            "http://PdL.com/property#PMinutoSustitucion",
+                            "http://PdL.com/property#PAsistencias",
+                            "http://PdL.com/property#PFaltasCometidas",
+                            "http://PdL.com/property#PFaltasRecibidas",
+                            "http://PdL.com/property#PGoles",
+                            "http://PdL.com/property#PGolesCabeza",
+                            "http://PdL.com/property#PGolesFaltaDirecta",
+                            "http://PdL.com/property#PGolesPiernaD",
+                            "http://PdL.com/property#PGolesPenalti",
+                            "http://PdL.com/property#PGolesPiernaI",
+                            "http://PdL.com/property#PTarjetas",
+                            "http://PdL.com/property#PTarjetasAmarillas",
+                            "http://PdL.com/property#PTarjetasRojas",
+                            "http://PdL.com/property#PNumero",
+                            "http://PdL.com/property#PPosicion",
+                            "http://PdL.com/property#PSustituido",
+                            "http://PdL.com/property#PSustituidoPor",
+                            "http://PdL.com/property#PSustituyeA",
+                            "http://PdL.com/property#PTitularInicio",
+                            "http://PdL.com/property#PParadas",
+                            "http://PdL.com/property#PGolesRecibidos",
+                            "http://PdL.com/property#PImbatido"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PDecisivo",
+                        "name": "PDecisivo",
+                        "typeOf": "xsd:boolean",
+                        "label": {
+                            "es": "es decisivo",
+                            "eng": "is decisive"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PExpulsado",
+                        "name": "PExpulsado",
+                        "typeOf": "xsd:boolean",
+                        "label": {
+                            "es": "es expulsado",
+                            "eng": "is dropout"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PLesionado",
+                        "name": "PLesionado",
+                        "typeOf": "xsd:boolean",
+                        "label": {
+                            "es": "es lesionado",
+                            "eng": "is injured"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PMinutoLesion",
+                        "name": "PMinutoLesion",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "minuto de lesi�n",
+                            "eng": "minute of the injury"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PMinutoExpulsion",
+                        "name": "PMinutoExpulsion",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "minuto de la expulsi�n",
+                            "eng": "minute of the dropout"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PMinutosJugados",
+                        "name": "PMinutosJugados",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "minutos jugados",
+                            "eng": "minutes played"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PMinutoSustitucion",
+                        "name": "PMinutoSustitucion",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "minuto de la sustituci�n",
+                            "eng": "minute of substitution"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PAsistencias",
+                        "name": "PAsistencias",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "asistencias",
+                            "eng": "assists"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PFaltasCometidas",
+                        "name": "PFaltasCometidas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "faltas cometidas",
+                            "eng": "comitted fouls"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PFaltasRecibidas",
+                        "name": "PFaltasRecibidas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "faltas recibidas",
+                            "eng": "received fouls"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PGoles",
+                        "name": "PGoles",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "goles",
+                            "eng": "goals"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PGolesCabeza",
+                        "name": "PGolesCabeza",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "goles de cabeza",
+                            "eng": "head goals"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PGolesFaltaDirecta",
+                        "name": "PGolesFaltaDirecta",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "goles de falta directa",
+                            "eng": "direct foul goals"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PGolesPiernaD",
+                        "name": "PGolesPiernaD",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "goles de pierna derecha",
+                            "eng": "right leg goals"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PGolesPenalti",
+                        "name": "PGolesPenalti",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "goles de penalti",
+                            "eng": "penalty goals"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PGolesPiernaI",
+                        "name": "PGolesPiernaI",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "goles de pierna izquierda",
+                            "eng": "left leg goals"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PTarjetas",
+                        "name": "PTarjetas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "tarjetas",
+                            "eng": "cards"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PTarjetasAmarillas",
+                        "name": "PTarjetasAmarillas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "tarjetas amarillas",
+                            "eng": "yellow cards"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PTarjetasRojas",
+                        "name": "PTarjetasRojas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "tarjetas rojas",
+                            "eng": "red cards"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PNumero",
+                        "name": "PNumero",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "n�mero",
+                            "eng": "dorsal"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PPosicion",
+                        "name": "PPosicion",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "posici�n",
+                            "eng": "position"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PSustituido",
+                        "name": "PSustituido",
+                        "typeOf": "xsd:boolean",
+                        "label": {
+                            "es": "es sustituido",
+                            "eng": "is replaced"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PSustituidoPor",
+                        "name": "PSustituidoPor",
+                        "typeOf": "http://PdL.com/class#JF_PORTERO",
+                        "label": {
+                            "es": "sustituido por",
+                            "eng": "replaced by"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PSustituyeA",
+                        "name": "PSustituyeA",
+                        "typeOf": "http://PdL.com/class#JF_PORTERO",
+                        "label": {
+                            "es": "sustituye a",
+                            "eng": "it replaces"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PTitularInicio",
+                        "name": "PTitularInicio",
+                        "typeOf": "xsd:boolean",
+                        "label": {
+                            "es": "es titular",
+                            "eng": "is titular"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PParadas",
+                        "name": "PParadas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "paradas",
+                            "eng": "stops"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PGolesRecibidos",
+                        "name": "PGolesRecibidos",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "goles recibidos",
+                            "eng": "received goals"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PImbatido",
+                        "name": "PImbatido",
+                        "typeOf": "xsd:boolean",
+                        "label": {
+                            "es": "es imbatido",
+                            "eng": "is unbeaten"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_P"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/class#JFPDATOS_C",
+                        "name": "JFPDATOS_C",
+                        "label": {
+                            "es": "datos del portero en campeonato",
+                            "eng": "goalkeeper championship data"
+                        },
+                        
+                        "properties": [
+                            "http://PdL.com/property#CMinutosJugados",
+                            "http://PdL.com/property#CAsistencias",
+                            "http://PdL.com/property#CGoles",
+                            "http://PdL.com/property#CNombreCompeticion",
+                            "http://PdL.com/property#CPartidosJugados",
+                            "http://PdL.com/property#CPartidosSuplente",
+                            "http://PdL.com/property#CPartidosTitular",
+                            "http://PdL.com/property#CTarjetasAmarillas",
+                            "http://PdL.com/property#CTarjetasRojas",
+                            "http://PdL.com/property#CPartidosGanados",
+                            "http://PdL.com/property#CPartidosPerdidos",
+                            "http://PdL.com/property#CPartidosEmpatados",
+                            "http://PdL.com/property#CParadas",
+                            "http://PdL.com/property#CGolesRecibidos",
+                            "http://PdL.com/property#CVecesImbatido",
+                            "http://PdL.com/property#CMaxPartidosSeguidosImbatido",
+                            "http://PdL.com/property#CMaxPartidosSeguidosImbatidoRecord"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CMinutosJugados",
+                        "name": "CMinutosJugados",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "minutos jugados",
+                            "eng": "minutes played"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CAsistencias",
+                        "name": "CAsistencias",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "asistencias",
+                            "eng": "assists"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CGoles",
+                        "name": "CGoles",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "goles",
+                            "eng": "goals"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CNombreCompeticion",
+                        "name": "CNombreCompeticion",
+                        "typeOf": "xsd:string",
+                        "label": {
+                            "es": "nombre de la competici�n",
+                            "eng": "name of championship"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CPartidosJugados",
+                        "name": "CPartidosJugados",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos jugados",
+                            "eng": "played matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CPartidosSuplente",
+                        "name": "CPartidosSuplente",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos suplente",
+                            "eng": "substitute matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CPartidosTitular",
+                        "name": "CPartidosTitular",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos titular",
+                            "eng": "titular matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CTarjetasAmarillas",
+                        "name": "CTarjetasAmarillas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "n�mero de tarjetas amarillas",
+                            "eng": "number of yellow cards"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CTarjetasRojas",
+                        "name": "CTarjetasRojas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "n�mero de tarjetas rojas",
+                            "eng": "number of red cards"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CPartidosGanados",
+                        "name": "CPartidosGanados",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos ganados",
+                            "eng": "won matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CPartidosPerdidos",
+                        "name": "CPartidosPerdidos",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos perdidos",
+                            "eng": "lost matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CPartidosEmpatados",
+                        "name": "CPartidosEmpatados",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos empatados",
+                            "eng": "tied matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CParadas",
+                        "name": "CParadas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "n�mero de paradas",
+                            "eng": "number of stops"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CGolesRecibidos",
+                        "name": "CGolesRecibidos",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "goles recibidos",
+                            "eng": "received goals"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CVecesImbatido",
+                        "name": "CVecesImbatido",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos imbatido",
+                            "eng": "unbeaten matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CMaxPartidosSeguidosImbatido",
+                        "name": "CMaxPartidosSeguidosImbatido",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "m�ximo n�mero de partidos seguidos imbatido",
+                            "eng": "maximum number of consecutive matches unbeaten"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#CMaxPartidosSeguidosImbatidoRecord",
+                        "name": "CMaxPartidosSeguidosImbatidoRecord",
+                        "typeOf": "xsd:boolean",
+                        "label": {
+                            "es": "Recordabsoluto de numero de partidos imbatidos",
+                            "eng": "Absolute record in number of unbeaten matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_C"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/class#JFPDATOS_H",
+                        "name": "JFPDATOS_H",
+                        "label": {
+                            "es": "datos hist�ricos de portero",
+                            "eng": "goalkeeper historical data"
+                        },
+                        
+                        "properties": [
+                            "http://PdL.com/property#HMinutosJugados",
+                            "http://PdL.com/property#HAsistencias",
+                            "http://PdL.com/property#HGoles",
+                            "http://PdL.com/property#HPartidosJugados",
+                            "http://PdL.com/property#HPartidosSuplente",
+                            "http://PdL.com/property#HPartidosTitular",
+                            "http://PdL.com/property#HTarjetasAmarillas",
+                            "http://PdL.com/property#HTarjetasRojas",
+                            "http://PdL.com/property#HPartidosGanados",
+                            "http://PdL.com/property#PartidosPerdidos",
+                            "http://PdL.com/property#PArtidosEmpatados",
+                            "http://PdL.com/property#HParadas",
+                            "http://PdL.com/property#HGolesRecibidos",
+                            "http://PdL.com/property#HVecesImbatido"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HMinutosJugados",
+                        "name": "HMinutosJugados",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "minutos jugados",
+                            "eng": "minutes played"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HAsistencias",
+                        "name": "HAsistencias",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "asistencias",
+                            "eng": "assists"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HGoles",
+                        "name": "HGoles",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "goles",
+                            "eng": "goals"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HPartidosJugados",
+                        "name": "HPartidosJugados",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos jugados",
+                            "eng": "played matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HPartidosSuplente",
+                        "name": "HPartidosSuplente",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos suplente",
+                            "eng": "substitute matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HPartidosTitular",
+                        "name": "HPartidosTitular",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos titular",
+                            "eng": "titular matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HTarjetasAmarillas",
+                        "name": "HTarjetasAmarillas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "tarjetas amarillas",
+                            "eng": "number of yellow cards"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HTarjetasRojas",
+                        "name": "HTarjetasRojas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "tajrjetas rojas",
+                            "eng": "number of red cards"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HPartidosGanados",
+                        "name": "HPartidosGanados",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos ganados",
+                            "eng": "won matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PartidosPerdidos",
+                        "name": "PartidosPerdidos",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos perdidos",
+                            "eng": "lost matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#PArtidosEmpatados",
+                        "name": "PArtidosEmpatados",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "partidos empatados",
+                            "eng": "draw matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HParadas",
+                        "name": "HParadas",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "paradas",
+                            "eng": "stops"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HGolesRecibidos",
+                        "name": "HGolesRecibidos",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "goles recibidos",
+                            "eng": "received goals"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#HVecesImbatido",
+                        "name": "HVecesImbatido",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "veces imbatido",
+                            "eng": "unbeaten matches"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#JFPDATOS_H"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/class#PARTIDO_FUTBOL",
+                        "name": "PARTIDO_FUTBOL",
+                        "label": {
+                            "es": "partido de f�tbol",
+                            "eng": "footbal match"
+                        },
+                        
+                        "properties": [
+                            "http://PdL.com/property#IdPartido",
+                            "http://PdL.com/property#nombreCompeticion",
+                            "http://PdL.com/property#IdLiga",
+                            "http://PdL.com/property#Jornada",
+                            "http://PdL.com/property#DiaSemana",
+                            "http://PdL.com/property#FechaUNIX",
+                            "http://PdL.com/property#NumAsistencias",
+                            "http://PdL.com/property#Fecha",
+                            "http://PdL.com/property#NumExpulsados",
+                            "http://PdL.com/property#Expulsados",
+                            "http://PdL.com/property#NumAmonestados",
+                            "http://PdL.com/property#Amonestados",
+                            "http://PdL.com/property#NumFaltas",
+                            "http://PdL.com/property#NumGoles",
+                            "http://PdL.com/property#GolesDentroArea",
+                            "http://PdL.com/property#GolesDescanso",
+                            "http://PdL.com/property#GolesFaltaDirecta",
+                            "http://PdL.com/property#GolesFueraArea",
+                            "http://PdL.com/property#GolesPenalti",
+                            "http://PdL.com/property#Grupo",
+                            "http://PdL.com/property#NumLesionados",
+                            "http://PdL.com/property#Lesionados",
+                            "http://PdL.com/property#MinutosExtra1",
+                            "http://PdL.com/property#MinutosExtra2",
+                            "http://PdL.com/property#MinutosJugados",
+                            "http://PdL.com/property#NumTarjetas",
+                            "http://PdL.com/property#Prorroga",
+                            "http://PdL.com/property#Remates",
+                            "http://PdL.com/property#RematesPuerta",
+                            "http://PdL.com/property#RematesFuera",
+                            "http://PdL.com/property#RematesPalo",
+                            "http://PdL.com/property#Resultado",
+                            "http://PdL.com/property#ResultadoDescanso",
+                            "http://PdL.com/property#ResultadoVL",
+                            "http://PdL.com/property#TandaPenaltis",
+                            "http://PdL.com/property#ResultadoTandaPenaltis",
+                            "http://PdL.com/property#Aburrido",
+                            "http://PdL.com/property#Disputado",
+                            "http://PdL.com/property#FuerasDeJuego",
+                            "http://PdL.com/property#Polemico",
+                            "http://PdL.com/property#Decisivo",
+                            "http://PdL.com/property#Dureza",
+                            "http://PdL.com/property#Animo",
+                            "http://PdL.com/property#Evolucion12",
+                            "http://PdL.com/property#EpocaTemporada",
+                            "http://PdL.com/property#EvolucionIntensidad",
+                            "http://PdL.com/property#ESTADIO_FUTBOL",
+                            "http://PdL.com/property#EQUIPO_FUTBOL",
+                            "http://PdL.com/property#GOL",
+                            "http://PdL.com/property#ARBITRO_FUTBOL"
+                        ]
+                    },
+                    {
+                        "@id": "http://PdL.com/property#IdPartido",
+                        "name": "IdPartido",
+                        "typeOf": "xsd:integer",
+                        "label": {
+                            "es": "id del partido",
+                            "eng": "match id"
+                        },
+                        "usedby": [
+                            "http://PdL.com/class#PARTIDO_FUTBOL"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "characteristics": {
+                "@graph": [
+                    {
+                        "@id": "http://PdL.com/class#CaracteristicasPlantilla",
+                        "name": "CaracteristicasPlantilla",
+                        "label": {
+                            "es": "caracteristicas",
+                            "eng": "features"
+                        }
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Idioma",
+                        "name": "Idioma",
+                        "label": {
+                            "es": "idioma",
+                            "eng": "language"
+                        },
+                        "inherits": "http://PdL.com/class#CaracteristicasPlantilla"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Espanol",
+                        "name": "Espanol",
+                        "label": {
+                            "es": "espa�ol",
+                            "eng": "spanish"
+                        },
+                        "inherits": "http://PdL.com/class#Idioma"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Ingles",
+                        "name": "Ingles",
+                        "label": {
+                            "es": "ingles",
+                            "eng": "english"
+                        },
+                        "inherits": "http://PdL.com/class#Idioma"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Arabe",
+                        "name": "Arabe",
+                        "label": {
+                            "es": "�rabe",
+                            "eng": "arabic"
+                        },
+                        "inherits": "http://PdL.com/class#Idioma"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#TiempoVerbal",
+                        "name": "TiempoVerbal",
+                        "label": {
+                            "es": "tiempo verbal",
+                            "eng": "verbal tense"
+                        },
+                        "inherits": "http://PdL.com/class#CaracteristicasPlantilla"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Presente",
+                        "name": "Presente",
+                        "label": {
+                            "es": "presente",
+                            "eng": "present"
+                        },
+                        "inherits": "http://PdL.com/class#TiempoVerbal"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Futuro",
+                        "name": "Futuro",
+                        "label": {
+                            "es": "futuro",
+                            "eng": "future"
+                        },
+                        "inherits": "http://PdL.com/class#TiempoVerbal"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#PreteritoImperfecto",
+                        "name": "PreteritoImperfecto",
+                        "label": {
+                            "es": "pret�rito imperfecto",
+                            "eng": "past"
+                        },
+                        "inherits": "http://PdL.com/class#TiempoVerbal"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Espacio",
+                        "name": "Espacio",
+                        "label": {
+                            "es": "espacio",
+                            "eng": "space"
+                        },
+                        "inherits": "http://PdL.com/class#CaracteristicasPlantilla"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Cronol�gico",
+                        "name": "Cronol�gico",
+                        "label": {
+                            "es": "cronol�gico",
+                            "eng": "chronological"
+                        },
+                        "inherits": "http://PdL.com/class#Espacio"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Retrospectivo",
+                        "name": "Retrospectivo",
+                        "label": {
+                            "es": "retrospectivo",
+                            "eng": "retrospective"
+                        },
+                        "inherits": "http://PdL.com/class#Espacio"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Anticipativo",
+                        "name": "Anticipativo",
+                        "label": {
+                            "es": "anticipativo",
+                            "eng": "anticipative"
+                        },
+                        "inherits": "http://PdL.com/class#Espacio"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Elemento",
+                        "name": "Elemento",
+                        "label": {
+                            "es": "elemento",
+                            "eng": "elemento"
+                        },
+                        "inherits": "http://PdL.com/class#CaracteristicasPlantilla"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Texto",
+                        "name": "Texto",
+                        "label": {
+                            "es": "texto",
+                            "eng": "text"
+                        },
+                        "inherits": "http://PdL.com/class#Elemento"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Parrafo",
+                        "name": "Parrafo",
+                        "label": {
+                            "es": "p�rrafo",
+                            "eng": "paragraph"
+                        },
+                        "inherits": "http://PdL.com/class#Elemento"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Oracion",
+                        "name": "Oracion",
+                        "label": {
+                            "es": "oracion",
+                            "eng": "sentence"
+                        },
+                        "inherits": "http://PdL.com/class#Elemento"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Palabra",
+                        "name": "Palabra",
+                        "label": {
+                            "es": "palabra",
+                            "eng": "word"
+                        },
+                        "inherits": "http://PdL.com/class#Elemento"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#G�nero",
+                        "name": "G�nero",
+                        "label": {
+                            "es": "genero",
+                            "eng": "genre"
+                        },
+                        "inherits": "http://PdL.com/class#CaracteristicasPlantilla"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Period�stico",
+                        "name": "Period�stico",
+                        "label": {
+                            "es": "periodistico",
+                            "eng": "journalistic"
+                        },
+                        "inherits": "http://PdL.com/class#G�nero"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Noticia",
+                        "name": "Noticia",
+                        "label": {
+                            "es": "noticia",
+                            "eng": "new"
+                        },
+                        "inherits": "http://PdL.com/class#Period�stico"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Ep�grafe",
+                        "name": "Ep�grafe",
+                        "label": {
+                            "es": "ep�grafe",
+                            "eng": "epigraph"
+                        },
+                        "inherits": "http://PdL.com/class#Noticia"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Entradilla",
+                        "name": "Entradilla",
+                        "label": {
+                            "es": "entradilla",
+                            "eng": "opening"
+                        },
+                        "inherits": "http://PdL.com/class#Noticia"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Apoyo",
+                        "name": "Apoyo",
+                        "label": {
+                            "es": "apoyo",
+                            "eng": "support"
+                        },
+                        "inherits": "http://PdL.com/class#Noticia"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Desarrollo",
+                        "name": "Desarrollo",
+                        "label": {
+                            "es": "desarrollo",
+                            "eng": "argument"
+                        },
+                        "inherits": "http://PdL.com/class#Noticia"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#T�tulo",
+                        "name": "T�tulo",
+                        "label": {
+                            "es": "t�tulo",
+                            "eng": "title"
+                        },
+                        "inherits": "http://PdL.com/class#Noticia"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Reportaje",
+                        "name": "Reportaje",
+                        "label": {
+                            "es": "reportaje",
+                            "eng": "reportage"
+                        },
+                        "inherits": "http://PdL.com/class#Period�stico"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Titular",
+                        "name": "Titular",
+                        "label": {
+                            "es": "titular",
+                            "eng": "holder"
+                        },
+                        "inherits": "http://PdL.com/class#Reportaje"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Entrada",
+                        "name": "Entrada",
+                        "label": {
+                            "es": "entrada",
+                            "eng": "opening"
+                        },
+                        "inherits": "http://PdL.com/class#Reportaje"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Cuerpo",
+                        "name": "Cuerpo",
+                        "label": {
+                            "es": "cuerpo",
+                            "eng": "body"
+                        },
+                        "inherits": "http://PdL.com/class#Reportaje"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Cierre",
+                        "name": "Cierre",
+                        "label": {
+                            "es": "cierre",
+                            "eng": "closing"
+                        },
+                        "inherits": "http://PdL.com/class#Reportaje"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Estilo",
+                        "name": "Estilo",
+                        "label": {
+                            "es": "estilo",
+                            "eng": "style"
+                        },
+                        "inherits": "http://PdL.com/class#CaracteristicasPlantilla"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Libre",
+                        "name": "Libre",
+                        "label": {
+                            "es": "libre",
+                            "eng": "free"
+                        },
+                        "inherits": "http://PdL.com/class#Estilo"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#ElConfidencial",
+                        "name": "ElConfidencial",
+                        "label": {
+                            "es": "el confidencial",
+                            "eng": "el confidencial"
+                        },
+                        "inherits": "http://PdL.com/class#Estilo"
+                    }
+                ]
+            }
+        },
+        {
+            "properties": {
+                "@graph": [
+                    {
+                        "@id": "http://PdL.com/class#PropiedadesPlantilla",
+                        "name": "PropiedadesPlantilla",
+                        "label": {
+                            "es": "propiedades",
+                            "eng": "properties"
+                        }
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Ambito",
+                        "name": "Ambito",
+                        "label": {
+                            "es": "ambito",
+                            "eng": "ambit"
+                        },
+                        "inherits": "http://PdL.com/class#PropiedadesPlantilla"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#CompeticionDeportiva",
+                        "name": "CompeticionDeportiva",
+                        "label": {
+                            "es": "competicion deportiva",
+                            "eng": "sport championsip"
+                        },
+                        "inherits": "http://PdL.com/class#Ambito"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Futbol",
+                        "name": "Futbol",
+                        "label": {
+                            "es": "futbol",
+                            "eng": "football"
+                        },
+                        "inherits": "http://PdL.com/class#CompeticionDeportiva"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Partido",
+                        "name": "Partido",
+                        "label": {
+                            "es": "partido",
+                            "eng": "match"
+                        },
+                        "inherits": "http://PdL.com/class#Futbol"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Contexto",
+                        "name": "Contexto",
+                        "label": {
+                            "es": "contexto",
+                            "eng": "context"
+                        },
+                        "inherits": "http://PdL.com/class#Partido"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Clasico",
+                        "name": "Clasico",
+                        "label": {
+                            "es": "clasico",
+                            "eng": "classic"
+                        },
+                        "inherits": "http://PdL.com/class#Contexto"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Derbi",
+                        "name": "Derbi",
+                        "label": {
+                            "es": "derbi",
+                            "eng": "derby"
+                        },
+                        "inherits": "http://PdL.com/class#Contexto"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Descenso",
+                        "name": "Descenso",
+                        "label": {
+                            "es": "descenso",
+                            "eng": "relegation"
+                        },
+                        "inherits": "http://PdL.com/class#Contexto"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Ascenso",
+                        "name": "Ascenso",
+                        "label": {
+                            "es": "ascenso",
+                            "eng": "elevation"
+                        },
+                        "inherits": "http://PdL.com/class#Contexto"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Tercera",
+                        "name": "Tercera",
+                        "label": {
+                            "es": "tercera",
+                            "eng": "third division"
+                        },
+                        "inherits": "http://PdL.com/class#Contexto"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Segunda",
+                        "name": "Segunda",
+                        "label": {
+                            "es": "segunda",
+                            "eng": "second division"
+                        },
+                        "inherits": "http://PdL.com/class#Contexto"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Primera",
+                        "name": "Primera",
+                        "label": {
+                            "es": "primera",
+                            "eng": "first division"
+                        },
+                        "inherits": "http://PdL.com/class#Contexto"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Narra",
+                        "name": "Narra",
+                        "label": {
+                            "es": "narra",
+                            "eng": "narrate"
+                        },
+                        "inherits": "http://PdL.com/class#Partido"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Entero",
+                        "name": "Entero",
+                        "label": {
+                            "es": "entero",
+                            "eng": "full"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Parte1",
+                        "name": "Parte1",
+                        "label": {
+                            "es": "primera parte",
+                            "eng": "first half"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Parte2",
+                        "name": "Parte2",
+                        "label": {
+                            "es": "segunda parte",
+                            "eng": "second half"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Prorroga",
+                        "name": "Prorroga",
+                        "label": {
+                            "es": "prorroga",
+                            "eng": "extension"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Prorroga1",
+                        "name": "Prorroga1",
+                        "label": {
+                            "es": "primera parte de la prorroga",
+                            "eng": "extension first half"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Prorroga2",
+                        "name": "Prorroga2",
+                        "label": {
+                            "es": "segunda parte de la prorroga",
+                            "eng": "extension second half"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#TandaPenaltis",
+                        "name": "TandaPenaltis",
+                        "label": {
+                            "es": "tanda de penaltis",
+                            "eng": "penaltys shoot-out"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Penalti",
+                        "name": "Penalti",
+                        "label": {
+                            "es": "penalti",
+                            "eng": "penalty"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Penaltis",
+                        "name": "Penaltis",
+                        "label": {
+                            "es": "penaltis",
+                            "eng": "penaltys"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Falta",
+                        "name": "Falta",
+                        "label": {
+                            "es": "falta",
+                            "eng": "foul"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Faltas",
+                        "name": "Faltas",
+                        "label": {
+                            "es": "faltas",
+                            "eng": "fouls"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#SinTarjetas",
+                        "name": "SinTarjetas",
+                        "label": {
+                            "es": "sin tarjetas",
+                            "eng": "without cards"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Tarjeta",
+                        "name": "Tarjeta",
+                        "label": {
+                            "es": "tarjeta",
+                            "eng": "card"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Tarjetas",
+                        "name": "Tarjetas",
+                        "label": {
+                            "es": "tarjetas",
+                            "eng": "cards"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Gol",
+                        "name": "Gol",
+                        "label": {
+                            "es": "gol",
+                            "eng": "goal"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Goles",
+                        "name": "Goles",
+                        "label": {
+                            "es": "goles",
+                            "eng": "goals"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Jugada",
+                        "name": "Jugada",
+                        "label": {
+                            "es": "jugada",
+                            "eng": "play"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Jugadas",
+                        "name": "Jugadas",
+                        "label": {
+                            "es": "jugadas",
+                            "eng": "plays"
+                        },
+                        "inherits": "http://PdL.com/class#Narra"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Enfasis",
+                        "name": "Enfasis",
+                        "label": {
+                            "es": "enfasis",
+                            "eng": "emphasis"
+                        },
+                        "inherits": "http://PdL.com/class#Partido"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#TipoJuego",
+                        "name": "TipoJuego",
+                        "label": {
+                            "es": "tipo de juego",
+                            "eng": "play type"
+                        },
+                        "inherits": "http://PdL.com/class#Enfasis"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Goles",
+                        "name": "Goles",
+                        "label": {
+                            "es": "goles",
+                            "eng": "goals"
+                        },
+                        "inherits": "http://PdL.com/class#Enfasis"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Gol",
+                        "name": "Gol",
+                        "label": {
+                            "es": "gol",
+                            "eng": "goal"
+                        },
+                        "inherits": "http://PdL.com/class#Enfasis"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Jugada",
+                        "name": "Jugada",
+                        "label": {
+                            "es": "jugada",
+                            "eng": "play"
+                        },
+                        "inherits": "http://PdL.com/class#Enfasis"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Resultado",
+                        "name": "Resultado",
+                        "label": {
+                            "es": "resultado",
+                            "eng": "result"
+                        },
+                        "inherits": "http://PdL.com/class#Enfasis"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Incidencia",
+                        "name": "Incidencia",
+                        "label": {
+                            "es": "incidencia",
+                            "eng": "incidence"
+                        },
+                        "inherits": "http://PdL.com/class#Enfasis"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Animo",
+                        "name": "Animo",
+                        "label": {
+                            "es": "animo",
+                            "eng": "mood"
+                        },
+                        "inherits": "http://PdL.com/class#Enfasis"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Jugador",
+                        "name": "Jugador",
+                        "label": {
+                            "es": "jugador",
+                            "eng": "player"
+                        },
+                        "inherits": "http://PdL.com/class#Enfasis"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Clasificacion",
+                        "name": "Clasificacion",
+                        "label": {
+                            "es": "clasificaci�n",
+                            "eng": "clasiffication"
+                        },
+                        "inherits": "http://PdL.com/class#Enfasis"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Minuto",
+                        "name": "Minuto",
+                        "label": {
+                            "es": "minuto",
+                            "eng": "minute"
+                        },
+                        "inherits": "http://PdL.com/class#Enfasis"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Otros",
+                        "name": "Otros",
+                        "label": {
+                            "es": "otros",
+                            "eng": "others"
+                        },
+                        "inherits": "http://PdL.com/class#Partido"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#LganaV",
+                        "name": "LganaV",
+                        "label": {
+                            "es": "local gana visitante",
+                            "eng": "local win visitor"
+                        },
+                        "inherits": "http://PdL.com/class#Otros"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#VganaL",
+                        "name": "VganaL",
+                        "label": {
+                            "es": "visitante gana local",
+                            "eng": "visitor win local"
+                        },
+                        "inherits": "http://PdL.com/class#Otros"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Empate",
+                        "name": "Empate",
+                        "label": {
+                            "es": "empate",
+                            "eng": "draw"
+                        },
+                        "inherits": "http://PdL.com/class#Otros"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#LganaVProrroga",
+                        "name": "LganaVProrroga",
+                        "label": {
+                            "es": "local gana visitante (prorroga)",
+                            "eng": "local win visitor (extension)"
+                        },
+                        "inherits": "http://PdL.com/class#Otros"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#VganaLProrroga",
+                        "name": "VganaLProrroga",
+                        "label": {
+                            "es": "visitante gana local (prorroga)",
+                            "eng": "visitor win local (extension)"
+                        },
+                        "inherits": "http://PdL.com/class#Otros"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#EmpateProrroga",
+                        "name": "EmpateProrroga",
+                        "label": {
+                            "es": "empate en prorroga",
+                            "eng": "draw (extension)"
+                        },
+                        "inherits": "http://PdL.com/class#Otros"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#LganaVPenaltis",
+                        "name": "LganaVPenaltis",
+                        "label": {
+                            "es": "local gana visitante (penaltis)",
+                            "eng": "local win visitor (penaltys)"
+                        },
+                        "inherits": "http://PdL.com/class#Otros"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#VganaLPenaltis",
+                        "name": "VganaLPenaltis",
+                        "label": {
+                            "es": "visitante gana local (penaltis)",
+                            "eng": "visitor win local (penaltys)"
+                        },
+                        "inherits": "http://PdL.com/class#Otros"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Suspendido",
+                        "name": "Suspendido",
+                        "label": {
+                            "es": "suspendido",
+                            "eng": "suspended match"
+                        },
+                        "inherits": "http://PdL.com/class#Otros"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Temporalidad",
+                        "name": "Temporalidad",
+                        "label": {
+                            "es": "temporalidad",
+                            "eng": "temporality"
+                        },
+                        "inherits": "http://PdL.com/class#Partido"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Parte1",
+                        "name": "Parte1",
+                        "label": {
+                            "es": "primera parte",
+                            "eng": "First half"
+                        },
+                        "inherits": "http://PdL.com/class#Temporalidad"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Parte2",
+                        "name": "Parte2",
+                        "label": {
+                            "es": "segunda parte",
+                            "eng": "Second Half"
+                        },
+                        "inherits": "http://PdL.com/class#Temporalidad"
+                    },
+                    {
+                        "@id": "http://PdL.com/class#Minuto",
+                        "name": "Minuto",
+                        "label": {
+                            "es": "minuto",
+                            "eng": "minute"
+                        },
+                        "inherits": "http://PdL.com/class#Temporalidad"
+                    }
+                ]
+            }
+        }
+    ]
+}

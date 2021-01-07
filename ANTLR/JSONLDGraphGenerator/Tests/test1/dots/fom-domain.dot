@@ -1,0 +1,73 @@
+graph domain{
+	node [fontname="Arial"]; 
+	edge [fontname="Arial",fontsize=12]
+
+	//node_class
+	node [shape=ellipse,style=filled,fillcolor=lightseagreen,fontsize=20,fontname="Arial"]
+	"class_familia"[label="FAMILIA"];
+	"class_mascota"[label="MASCOTA"];
+	"class_persona"[label="PERSONA"];
+
+	//node_property
+	node [shape=record,style=filled,fillcolor=lightgoldenrodyellow,fontsize=10,fontname="Arial"];
+	"property_apellidos"[label="{Apellidos|xsd:string}"];
+	"property_ascendientes"[label="{Ascendientes|class_PERSONA}"];
+	"property_descendientes"[label="{Descendientes|class_PERSONA}"];
+	"property_designacion"[label="{Designacion|xsd:string}"];
+	"property_fecha"[label="{Fecha|xsd:string}"];
+	"property_fechanacimiento"[label="{FechaNacimiento|xsd:string}"];
+	"property_fechanacimiento"[label="{FechaNacimiento|xsd:string}"];
+	"property_fechaunix"[label="{FechaUNIX|xsd:integer}"];
+	"property_localidad"[label="{Localidad|xsd:string}"];
+	"property_mascotas"[label="{Mascotas|class_MASCOTA}"];
+	"property_nombre"[label="{Nombre|xsd:string}"];
+	"property_nombre"[label="{Nombre|xsd:string}"];
+	"property_nucleo"[label="{Nucleo|class_PERSONA}"];
+	"property_raza"[label="{Raza|xsd:string}"];
+	"property_rol"[label="{Rol|xsd:string}"];
+	"property_sueldoanual"[label="{SueldoAnual|xsd:integer}"];
+	"property_tipo"[label="{Tipo|xsd:string}"];
+	"property_tipofamilia"[label="{TipoFamilia|xsd:string}"];
+
+	//node_relationship
+	node [shape=hexagon,style=filled,fillcolor=paleturquoise,fontsize=15,fontname="Arial"]
+	"relationship_conocea"[label="conoceA"];
+
+	//edge_property
+	edge[style=dashed,len=3,color=grey];
+	"class_familia" -- "property_fechaunix";
+	"class_familia" -- "property_fecha";
+	"class_familia" -- "property_localidad";
+	"class_familia" -- "property_tipofamilia";
+	"class_familia" -- "property_designacion";
+	"class_familia" -- "property_nucleo";
+	"class_familia" -- "property_descendientes";
+	"class_familia" -- "property_mascotas";
+	"class_mascota" -- "property_tipo";
+	"class_mascota" -- "property_nombre";
+	"class_mascota" -- "property_raza";
+	"class_mascota" -- "property_fechanacimiento";
+	"class_persona" -- "property_nombre";
+	"class_persona" -- "property_apellidos";
+	"class_persona" -- "property_rol";
+	"class_persona" -- "property_fechanacimiento";
+	"class_persona" -- "property_sueldoanual";
+	"class_persona" -- "property_ascendientes";
+	"relationship_conocea" -- "property_fechaunix";
+
+	//edge_indirect_use and edge_class
+	"property_ascendientes" -- "class_persona"[style=dotted,arrowhead=vee,dir=forward,arrowsize=2,label="TypeOf"];
+	"class_persona" -- "class_persona" [ fontcolor=orangered, color=orangered, style=dashed,arrowhead=vee,dir=forward,arrowsize=2,label="Ascendientes (1..n)"];
+	"property_descendientes" -- "class_persona"[style=dotted,arrowhead=vee,dir=forward,arrowsize=2,label="TypeOf"];
+	"class_familia" -- "class_persona" [ fontcolor=orangered, color=orangered, style=dashed,arrowhead=vee,dir=forward,arrowsize=2,label="Descendientes (0..n)"];
+	"property_mascotas" -- "class_mascota"[style=dotted,arrowhead=vee,dir=forward,arrowsize=2,label="TypeOf"];
+	"class_familia" -- "class_mascota" [ fontcolor=orangered, color=orangered, style=dashed,arrowhead=vee,dir=forward,arrowsize=2,label="Mascotas (0..n)"];
+	"property_nucleo" -- "class_persona"[style=dotted,arrowhead=vee,dir=forward,arrowsize=2,label="TypeOf"];
+	"class_familia" -- "class_persona" [ fontcolor=orangered, color=orangered, style=dashed,arrowhead=vee,dir=forward,arrowsize=2,label="Nucleo (1..n)"];
+
+	//edge_inheritance
+
+	//edge_relationship
+	"relationship_conocea" -- "class_persona" [color=blue,fontcolor=blue,fontsize=15,style=dashed,arrowhead=normal,dir=forward,len=2,penwidth=3,arrowsize=1,label="esConocidoPor"];
+	"class_persona" -- "relationship_conocea" [color=blue,fontcolor=blue,fontsize=15,style=dashed,arrowhead=normal,dir=forward,len=2,penwidth=3,arrowsize=1,label="conoceA"];
+}

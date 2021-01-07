@@ -1,0 +1,83 @@
+graph characteristics{
+	node [fontname="Arial"]; 
+	edge [fontname="Arial",fontsize=12]
+
+	//node_class
+	node [shape=ellipse,style=filled,fillcolor=lightseagreen,fontsize=20,fontname="Arial"]
+	"class_anticipativo"[label="Anticipativo"];
+	"class_apoyo"[label="Apoyo"];
+	"class_arabe"[label="Arabe"];
+	"class_caracteristicasplantilla"[label="CaracteristicasPlantilla"];
+	"class_cierre"[label="Cierre"];
+	"class_cronol?gico"[label="Cronol?gico"];
+	"class_cuerpo"[label="Cuerpo"];
+	"class_desarrollo"[label="Desarrollo"];
+	"class_elconfidencial"[label="ElConfidencial"];
+	"class_elemento"[label="Elemento"];
+	"class_entrada"[label="Entrada"];
+	"class_entradilla"[label="Entradilla"];
+	"class_ep?grafe"[label="Ep?grafe"];
+	"class_espacio"[label="Espacio"];
+	"class_espanol"[label="Espanol"];
+	"class_estilo"[label="Estilo"];
+	"class_futuro"[label="Futuro"];
+	"class_g?nero"[label="G?nero"];
+	"class_idioma"[label="Idioma"];
+	"class_ingles"[label="Ingles"];
+	"class_libre"[label="Libre"];
+	"class_noticia"[label="Noticia"];
+	"class_oracion"[label="Oracion"];
+	"class_palabra"[label="Palabra"];
+	"class_parrafo"[label="Parrafo"];
+	"class_period?stico"[label="Period?stico"];
+	"class_presente"[label="Presente"];
+	"class_preteritoimperfecto"[label="PreteritoImperfecto"];
+	"class_reportaje"[label="Reportaje"];
+	"class_retrospectivo"[label="Retrospectivo"];
+	"class_texto"[label="Texto"];
+	"class_tiempoverbal"[label="TiempoVerbal"];
+	"class_titular"[label="Titular"];
+	"class_t?tulo"[label="T?tulo"];
+
+	//edge_property
+	edge[style=dashed,len=3,color=grey];
+
+	//edge_indirect_use and edge_class
+
+	//edge_inheritance
+	"class_espacio" -- "class_anticipativo" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_noticia" -- "class_apoyo" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_idioma" -- "class_arabe" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_reportaje" -- "class_cierre" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_espacio" -- "class_cronol?gico" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_reportaje" -- "class_cuerpo" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_noticia" -- "class_desarrollo" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_estilo" -- "class_elconfidencial" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_caracteristicasplantilla" -- "class_elemento" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_reportaje" -- "class_entrada" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_noticia" -- "class_entradilla" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_noticia" -- "class_ep?grafe" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_caracteristicasplantilla" -- "class_espacio" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_idioma" -- "class_espanol" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_caracteristicasplantilla" -- "class_estilo" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_tiempoverbal" -- "class_futuro" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_caracteristicasplantilla" -- "class_g?nero" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_caracteristicasplantilla" -- "class_idioma" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_idioma" -- "class_ingles" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_estilo" -- "class_libre" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_period?stico" -- "class_noticia" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_elemento" -- "class_oracion" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_elemento" -- "class_palabra" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_elemento" -- "class_parrafo" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_g?nero" -- "class_period?stico" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_tiempoverbal" -- "class_presente" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_tiempoverbal" -- "class_preteritoimperfecto" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_period?stico" -- "class_reportaje" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_espacio" -- "class_retrospectivo" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_elemento" -- "class_texto" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_caracteristicasplantilla" -- "class_tiempoverbal" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_reportaje" -- "class_titular" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+	"class_noticia" -- "class_t?tulo" [color=black,fontcolor=black,fontsize=15,style=dashed,arrowhead=normal,dir=back,arrowsize=3,label="inherits"];
+
+	//edge_relationship
+}

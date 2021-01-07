@@ -1,0 +1,423 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+
+
+\title{\textbf{Práctica 3: Fundamentos de la ciencia de datos}}
+\author{Luis Alejandro Cabanillas, Alvaro de las Heras, Mohssin Nagib Najim}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+
+\maketitle
+
+\section{Ejercicio 1}La primera parte de la práctica consistirá en la realización de dos ejercicios de clasificación de datos con R, aplicando todos los conocimientos vistos en clase.
+
+Los datos en este ejercicio serán relativos a las calificaciones de un grupo de alumnos en teoría, laboratorio y prácticas, respectivamente. La última nota es la calificación global, que en este caso será el clasificador. Contamos con la siguiente muestra:
+\begin{itemize}
+	\item \textbf{{A, A, B, Ap}}
+	\item \textbf{{A, B, D, Ss}}
+	\item \textbf{{D, D, C, Ss}}
+        \item \textbf{{D, D, A, Ss}}
+        \item \textbf{{B, C, B, Ss}}
+        \item \textbf{{C, B, B, Ap}}
+        \item \textbf{{B, B, A, Ap}}
+        \item \textbf{{C, D, C, Ss}}
+        \item \textbf{{B, A, C, Ss}}
+\end{itemize}
+
+\subsection{Árboles de decisión de Hunt} Lo primero que tendremos que hacer es descargar los paquetes tree y rpart, que utilizaremos para ejecutar el algoritmo de clasificación elegido sobre la muestra de datos. Para ello ejecutaremos:
+
+\begin{itemize}
+	\item \textbf{{install.packages("rpart")}}
+	\item \textbf{{install.packages("tree")}}
+\end{itemize}
+
+Una vez descargados, los cargaremos en el entorno actual con library:
+@
+<<>>=
+library("rpart")
+library("tree")
+search()
+
+@
+
+Como podemos ver, tras ejecutar search, tenemos los paquetes cargados y listos para utilizarse.
+
+Lo siguiente que tendremos que hacer es introducir la muestra de datos en un archivo .txt y leer este archivo con R:
+<<>>=
+(calificaciones<-read.table("notas.txt"))
+@
+
+Para poder ejecutar rpart sobre los datos de la muestra debemos convertir los datos leídos en un dataframe:
+<<>>=
+muestra<-data.frame(calificaciones)
+@
+
+Ahora ya tenemos todo preparado para poder ejecutar el algoritmo sobre los datos.En los argumentos pondremos "C.Globl~." para inidicar cual es el clasificador (C.Globl~) y el punto para coger todos los datos de la muestra. Como segundo argumento le indicaremos a la función que los datos residen en la variable muestra y como método le indicaremos class. No hace falta que le indiquemos que queremos calcular las ganancias de información mediante gini ya que, como se indica en la página 21 del manual de rpart, el algortimo aplica gini por defecto. Así:
+<<>>=
+(clasificacion=rpart(C.Globl~.,data=muestra, method="class", minsplit=1))
+@
+
+Podemos observar que el algoritmo ha llevado a cabo la clasificación. En el nodo raíz tenemos Laboratorio , si en la nota de laboratorio el alumno tiene una C o una D, podemos saber que ha suspendido. Si tiene una A o una B hay que evaluar la nota de Prácticas. Si en práticas tienen una A o una B ha aprobado, en caso contrario (C o D) ha suspendido.
+
+Así, el algoritmo de clasificación ha supuesto una ventaja, ya que no tenemos que evaluar la nota de Teoría para saber si el alumno ha aprobado o suspendido.
+
+También podemos utilizar la función tree para obtener el árbol de clasificación, aunque da fallos con muestras de datos tan pequeñas.
+<<>>=
+(clasificacionTree = tree(C.Globl~.,data=muestra, mincut=1,minsize=2))
+@
+
+Se puede apreciar que el árbol generado por rpart y tree es el mismo.
+
+\subsection{Análisis de regresión lineal}En el segundo apartado de la práctica vamos a realizar un análisis de regresión lineal sobre los radios y densidades de cuatro planetas del sistema solar. De esta forma, la muestra está conformada por:
+\begin{itemize}
+	\item \textbf{{Mercurio, 2.4, 5.4}}
+	\item \textbf{{Venus, 6.1, 5.2}}
+	\item \textbf{{Tierra, 6.4, 5.5}}
+        \item \textbf{{Marte, 3.4, 3.9}}
+\end{itemize}
+
+Estos datos los tendremos nuevamente en un .txt al que hemos llamado planetas. El primer paso es leer este txt:
+<<>>=
+(planetas<-read.table("planetas.txt"))
+@
+
+Una vez tenemos los datos en R, debemos generar la recta de regresión. La ecuación de una recta es \textbf{y=a+bx}. En nuestro caso, la y será la densidad y la x el radio. únicamente sabiendo esto ya podemos generar la recta de regresión, gracias a la función \textbf{lm}; que sirve para ajustar models lineales en R:
+<<>>=
+regresion = lm(D~R,data=planetas)
+@
+
+Ahora deberemos mostrar esos datos gráficamente:
+<<plot1, eval=FALSE>>=
+plot(planetas)
+abline(regresion, col="blue")
+@
+
+\begin{center}
+<<fig=TRUE, echo=FALSE>>=
+library("graphics")
+<<plot1>>
+@
+\end{center}
+
+Como podemos ver en la gráfica, la recta separa los datos correctamente.
+\section{Ejercicio 2} En la segunda parte de la práctica se nos propone un realizar un análisis
+de una muestra proporcionada en el mismo formada por las características de 10 vehiculos de cuatro
+tipos diferentes. Con cuatro datos por vehiculo {TipoCarnet, NumeroRuedas, NumeroPasajeros, TipoVehiculo}.
+
+La muestra que hemos obtenido consta de 10 características:
+\begin{itemize}
+	\item \textbf{{B, 4, 5, Coche}}
+	\item \textbf{{A, 2, 2, Moto}}
+	\item \textbf{{N, 2, 1, Bicicleta}}
+        \item \textbf{{B, 6, 4, Camión}}
+        \item \textbf{{B, 4, 6, Coche}}
+        \item \textbf{{B, 4, 4, Coche}}
+        \item \textbf{{N, 2, 2, Bicicleta}}
+        \item \textbf{{B, 2, 1, Moto}}
+        \item \textbf{{B, 6, 2, Camión}}
+        \item \textbf{{N, 2, 1, Bicicleta}}
+
+\end{itemize}
+
+\subsection{Instalación paquete}
+Para la realización de este ejercicio necesitaremos los paquetes, "rpart" y "tree" previamente instalados en el anterior ejercicio:
+
+@
+<<>>=
+library("rpart")
+library("tree")
+search()
+
+@
+
+\subsection{Introducción de los datos de la muestra en R}
+Los datos de las características de los coches los introduciremos en R por medio de un archivo .txt por lo que ejecutaremos los siguientes comandos:
+@
+<<>>=
+(vehiculos <- read.table("vehiculos.txt"))
+
+@
+El siguiente paso ser? convertirlo a data frame para poder trabajar con la muestra que tenemos:
+<<>>=
+(muestraV = data.frame(vehiculos))
+@
+
+\subsection{Algoritmo de Hunt}
+Utilizamos "rpart" para aplicar el algoritmo de Hunt utilizando la medida de la Ganancia de Información que trabaja con la medida
+de impureza Gini por defecto y obtener la funci?n de clasificación (el árbol), como atributo clasificador utilizamos el tipo de vehiculo (TipoVehiculo):
+<<>>=
+(clasificacionV = rpart(TipoVehiculo~., data=muestraV, method="class", minsplit=1))
+@
+
+También podemos utilizar la función tree para realizar el mismo proceso:
+<<>>=
+(clasificaciontreeV = tree(TipoVehiculo~., data=muestraV, mincut=1, minsize=2))
+@
+
+Podemos ver los resultados al aplicar el algoritmo de optimización de Hunt que se nos genera el árbol final, el cual está estructurado en nodos y ramas.
+
+\subsection{Análisis de regresión}En este segundo apartado tenemos que realizar un análisis de regresión sobre cuatro muestras de pares de datos situadas en un solo archivo .txt. El archivo que contiene las muestras se llamará muestra4.txt y tendrá todos los datos, especificados en el enunciado, en dos columnas:
+<<>>=
+(muestra <- read.table("muestra4.txt"))
+@
+
+Al tratarse de diferentes muestras, tenemos que dividir muestraDatos para obtener las cuatro muestras por separado y realizar el análisis de regresión sobre cada una de ellas. Para separar las muestras haremos uso de la función \textbf{split} de R, que sirve para dividir los datos de un vector en subgrupos:
+<<>>=
+muestras <- split(muestra, factor(sort(rank(row.names(muestra))%%4)))
+muestra1 <- muestras[[1]]
+muestra1
+muestra2 <- muestras[[2]]
+muestra2
+muestra3 <- muestras[[3]]
+muestra3
+muestra4 <- muestras[[4]]
+muestra4
+@
+
+Como podemos ver, ya tenemos los datos separados por muestras y podemos hacer el análisis de regresión sobre cada muestra:
+
+<<>>=
+(regresion1 = lm(Y~X, data=muestra1))
+(regresion2 = lm(Y~X, data=muestra2))
+(regresion3 = lm(Y~X, data=muestra3))
+(regresion4 = lm(Y~X, data=muestra4))
+@
+
+Por último, para visualizar las rectas de regresión en cada muestra de un vistazo hacemos uso de la función de R \textbf{par}, que nos permite consultar componentes gráficos. Le pasaremos como parámetro una matriz de 2x2 para que cada posición de esta sea ocupada por una gráfica:
+
+<<plot2, eval=FALSE>>=
+par(mfrow=c(2,2))
+plot(muestra1$X, muestra1$Y, main="Muestra 1", xlab="x", ylab="y")
+abline(regresion1, col="red")
+plot(muestra2$X, muestra2$Y, main="Muestra 2", xlab="x", ylab="y")
+abline(regresion2, col="blue")
+plot(muestra3$X, muestra3$Y, main="Muestra 3", xlab="x", ylab="y")
+abline(regresion3, col="green")
+plot(muestra4$X, muestra4$Y, main="Muestra 4", xlab="x", ylab="y")
+abline(regresion4, col="violet")
+@
+
+<<fig=TRUE, echo=FALSE>>=
+library("graphics")
+<<plot2>>
+@
+
+Como podemos ver, hemos obtenido 4 gráficas con 4 rectas de regresión diferentes. Ahora vamos a estudiar la dependencia de los datos de cada muestra mediante la correlación.
+
+\subsection{Correlación} Para calcular la correlación en R es tan fácil como usar la función \textbf{cor(variableX, variableY)}. Si la correlación tiene valor 1 o -1, la correlación es perfecta. En cambio, mientras más se acerque a 0, más débil será. Sabiendo esto vamos a estudiar el grado de correlación de cada muestra.
+
+\subsubsection{Muestra 1} Para calcular la correlación en la muestra 1:
+<<>>=
+cor(muestra1$X,muestra1$Y)
+@
+
+Como podemos ver, la correlación tiene un valor cercano a 1, por lo que existe una correlación positiva fuerte.
+
+\subsubsection{Muestra 2} Para calcular la correlación en la muestra 2:
+<<>>=
+cor(muestra2$X,muestra2$Y)
+@
+
+Nuevamente, la correlación tiene un valor cercano a 1, por lo que existe una correlación positiva fuerte.
+
+\subsubsection{Muestra 3} Para calcular la correlación en la muestra 3:
+<<>>=
+cor(muestra3$X,muestra3$Y)
+@
+
+La correlación tiene un valor cercano a 1 y muy parecido a los dos anteriores, por lo que existe una correlación positiva fuerte.
+
+\subsubsection{Muestra 4} Para calcular la correlación en la muestra 4:
+<<>>=
+cor(muestra4$X,muestra4$Y)
+@
+
+Como podemos ver, la correlación tiene un valor cercano a 1 y muy aproximado al resto de muestras, por lo que existe una correlación positiva fuerte en todas las muestras.
+
+\section{Ejercicio 2}
+\subsection{Ejercicio 2.3} 
+En este ejercicio el objetivo será clasificar un conjunto de películas y valoraciones, este conjunto de datos lo hemos obtenido en Kaggle.com. 
+La idea es realizar una serie de clasificaciones de diversos tipos, con varias técnicas, además de la visualización y prueba de estos mediante predicciones. Para necesitaremos las siguiente bibliotecas: 
+\begin{itemize}
+	\item \textbf{Visualización:} rpart.plot y ggplot2.
+	\item \textbf{Clasificación:} rpart, tree, randomForest y BayesTree.
+\end{itemize}
+<<>>=
+library("rpart.plot")
+library("rpart")  
+library("tree")  
+library("ggplot2")
+library("randomForest") 
+library("BayesTree")  
+@
+Con las bibliotecas puestas el siguiente paso es cargar los datos, en este caso el archivo es un CSV, por lo que podemos leerlo directamente con R. Para optimizar la carga al leer seleccionamos las columnas que nos interesan ahorrando así cargar columnas que no son relevantes para el ejercicio, esto lo hacemos con el parámetro textbf{colClasses}. Una vez cargados los datos procederemos a limpiar los valores NA con textbf{na.omit(datos)}, para el problema definiremos distintos conjuntos de datos de 25, 1000 y todas las películas.
+<<>>=
+columnas<-c("NULL","character","numeric","numeric","NULL","NULL",
+            "character","NULL","numeric","character","character",
+            "character","numeric", rep("NULL",6),"character","character",
+            "NULL","numeric","numeric","NULL","numeric","NULL","NULL")
+peliculas <- read.csv("imdb.csv",head=T,sep=",",encoding = "UTF-8",colClasses=columnas)
+peliculas<-na.omit(peliculas)
+pelis<-head(peliculas,25)
+mil_peliculas<-head(peliculas,1000)
+head(pelis,5)
+@
+A continuación aplicaremos los distintos métodos de clasificación para obtener datos
+\subsubsection{Regresión lineal entre variables}
+En esta sección se va estudiar la correlación entre distintas variables cuantitativas, para finalmente mostrar la recta de regresión que las define, para ello se realizarán distintos ejemplos.
+En el primer caso vamos a comparar la relación que existe entre el número de votos y la puntuación de mil películas. En este caso si que existe una relación débil entre ambas variables, pero para este conjunto de datos es la mejor que se ha podido obtener, porque el valor de R cuadrado es de 0,40. La recta quedará definida por los coeficientes que se reflejan en el \textbf{summary()}, que son en este caso a = 5,897 y b =  3.164e-06. Además también tendrá una desviación del error de 0,762, que será la distancia entre lo predicho por la línea y los puntos reales.
+<<>>=
+# Regresion entre votos y puntuacion
+comp<-data.frame(mil_peliculas["num_voted_users"],mil_peliculas["imdb_score"])
+reg.votos.imdb = lm(imdb_score~num_voted_users,data=mil_peliculas)
+summary(reg.votos.imdb)
+@
+
+<<regresion1, fig=TRUE, width=10, height=10>>=
+plot(comp)
+abline(reg.votos.imdb, col="blue")
+@
+
+Estas variables se han elegido para comprobar como actua cuando no tiene apenas relación alguna las variables, como se observa en la gráfica se puede ver una nube de puntos cuya correlación es muy mala, como se ve con el R al cuadrado de 0,16, el error es mayor con 0,90 y los coeficientes son distintos.
+<<>>=
+# Regresion entre duracion de una pelicula y puntuacion
+comp<-data.frame(mil_peliculas["duration"],mil_peliculas["imdb_score"])
+reg.duracion.imdb = lm(imdb_score~duration,data=mil_peliculas)
+summary(reg.duracion.imdb)
+@
+
+<<regresion2, fig=TRUE, width=10, height=10>>=
+ggplot(mil_peliculas, aes(x = duration, y = imdb_score)) + 
+  geom_point() +
+  stat_smooth(method = "lm", col = "red")
+@
+
+\subsubsection{Árboles de regresión y clasificación}
+Ahora realizaremos clasificación tanto de variables cualitativas(árbol de clasificación) como de variables cuantitativas(árbol de regresión), para ello usaremos rpart y tree como métodos para realizar los árboles
+
+Este árbol es un clasificador sobre la variable país (country) de la película, para ello en vez de usar todas las columnas de los datos, usamos solo el nombre de director, la puntuación y el título. Además para indicar de forma explícita que es una clasificación pondremos el method con valor class y las particiones mínimas a 1.
+<<>>=
+# Arbol de clasificacion (clases)
+clasif.rpart=rpart(country~director_name+imdb_score+title_year,
+                   data=pelis, method="class", minsplit=1)
+@
+
+Como método de visualización hemos usado la biblioteca \textbf{rpart.plot}, que se especializa en mostrar árboles de clase rpart, de los que hemos elegido varias visualizaciones.
+
+<<rpart1, fig=TRUE, width=10, height=10>>=
+rpart.plot(clasif.rpart, type=4)
+@
+ 
+ A diferencia del caso anterior, ahora vamos a cambiar parámetros como la optimización, que por defecto se realiza con Gini, ahora la haremos con el método de ganancia de información, que será indicado por los parámetros. También, hemos cambiado las variables a puntuación y año de publicación.
+ 
+<<>>=
+# Arbol de clasificacion (clases)
+clasif.rpart2=rpart(country~imdb_score+title_year,data=pelis,
+    method="class",parms = list(split="information"), minsplit=1)
+@
+
+<<rpart2, fig=TRUE, width=10, height=10>>=
+rpart.plot(clasif.rpart2, type=2)
+@
+
+Este árbol será un árbol de regresión, porque trabajará sobre la variable cuantitativa de presupuesto, que será un entero en la divisa del país. Este se obtendrá mediante la fórmula formada por año de publicación, puntuación y número de votos. Como se trata de un árbol de regresión tenemos que cambiar el método a anova.
+
+<<>>=
+# Arbol de regresion (numerico)
+anova.rpart=rpart(budget~title_year+imdb_score+num_voted_users
+                  ,data=mil_peliculas, method="anova")
+@
+
+<<rpart3, fig=TRUE, width=10, height=10>>=
+rpart.plot(anova.rpart, type=2)
+@
+
+Finalmente, rpart ofrece un módulo para generar reglas que permitan implementar los clasificadores, en este caso mostraremos algunas de las reglas por escrito. Con style="tallw" podremos mostrarlas de forma más clara.
+
+<<>>=
+# Reglas que definen los arboles
+reglas.anova <-rpart.rules(anova.rpart,style="tallw")
+head(reglas.anova,2)
+rpart.rules(clasif.rpart,style="tallw")
+@
+
+Esta clasificación es igual a la que realizamos por rpart, con la misma fórmula. Como se puede observar el gráfico del árbol es igual (aunque no en estilo). También como variación se ha cambiado el método de partición a desviación.
+
+<<>>=
+# Clasificacion con tree
+clasificacion.tree = tree(budget~title_year+imdb_score+num_voted_users,data=mil_peliculas,split = "deviance")
+@
+
+<<tree, fig=TRUE, width=10, height=10>>=
+plot(clasificacion.tree );  
+text(clasificacion.tree , all=TRUE, cex=0.5)
+@
+
+\subsubsection{Random Forest para clasificación}
+Haremos uso de la librería randomForest para otra clasificación de los datos, esta librería implementa el algoritmo de bosque aleatorio de Breiman (random forest) para la clasificación y la regresión. Este algoritmo genera muchos arboles con clasificaciones, cada una con unos votos, el bosque elige la clasificación con más votos teniendo en cuenta todos los árboles del bosque. 
+
+Cada árbol crece de manera que, si el numero de casos en el set de entreno es N, muestra es de N casos al azar pero con "replacement" (el reemplazo) de los datos originales. Esta muestra será el set de entreno para el árbol. Si hay M variables de entrada siendo m variables seleccionadas al azar a partir de M y la mejor división de esta m se usa para dividir el nodo
+el valor de m es constante en el crecimiento del bosque, tendremos que m<<M. Cada árbol se crece hasta la extensión más grande posible, no hay poda. 
+
+La tasa de error depende de la correlación entre dos arboles cualquiera en el bosque, cuanta más correlación más ratio de error, y también depende de la fuerza de cada árbol en el bosque, un árbol con poco ratio de error es un clasificador fuerte, a más fuerza de los árboles menos ratio de error en el bosque.
+En nuestro ejemplo se hará el entrenamiento con el 70 de los datos y 500 árboles, para mostrarlo en una gráfica que nos dirá la precisión del clasificador en función al número de árboles, que es bastante aceptable, como se podrá ver en el ejemplo de predicción.
+<<>>=
+set.seed(88)
+# Preparacion datos de entrenamiento
+tamano.total <- nrow(peliculas)
+tamano.entreno <- round(tamano.total*0.7)
+datos.indices <- sample(1:tamano.total , size=tamano.entreno)
+peliculas.entreno <- peliculas[datos.indices,]
+peliculas.test <- peliculas[-datos.indices,]
+# Modelo de random forest
+clasif.randomf = randomForest(imdb_score~title_year+budget+
+                 num_voted_users, data = peliculas.entreno)
+@
+
+<<randomf, fig=TRUE, width=10, height=10>>=
+plot(clasif.randomf)
+@
+
+\subsubsection{Clasificación bayesiana}
+La clasificación bayesiana se basa en la estadística bayesiana, que se basa en la independencia de las características de un objeto, en nuestro caso la película. Entonces usando estas características de forma condicional (una característica puede depender de la anterior) que formará un producto de probabilidades de las características del objeto. Por lo que si una estuviera ausente, esta haría que todo valiese cero.
+
+Implementaremos este tipo de clasificación con la biblioteca bayesTrees y usaremos el método bart. Este recibe los datos a entrenar y targets que en este caso son número de votos y puntuaciones. Además si quisieramos podríamos añadir datos para hacer el test con el mismo método.
+<<>>=
+set.seed(99)
+clasif.bart <- bart(pelis["num_voted_users"],as.double(pelis$imdb_score))
+@
+
+El resultado son dos gráficas que muestran los datos, en la izquierda la sigma de cada objeto, y a la derecha las puntuaciones en las que clasificará junto a sus desviaciones.
+
+<<bart, fig=TRUE, width=10, height=10>>=
+plot(clasif.bart)
+@
+
+\subsubsection{Predicción de datos con los modelos}
+Para finalizar la práctica vamos a usar los modelos creados anteriormente para realizar predicciones de clasificación, dentro lo posible. Como herramienta usaremos el método predict que implementan rpart y randomForest, para realizar las predicciones.
+
+En los árboles de clasificación, se pueden usar los tipos prob, que muestra la probabilidad de cada valor cualitativo de la variable y class que muestra las distintas clases a las que se llega.
+
+En los árboles de regresión, solo se puede aplicar matrix y vector, ambos devuelven la respuesta media al objeto a clasificar, en este caso solo haremos vector, al cambiar sólo la forma de representación.
+
+La predicción con randomForest funciona de forma similar, aunque no es necesario indicar el tipo, pero si queremos generar todas las decisiones de los árboles lo indicaremos con predict.all.
+<<>>=
+# Predicciones
+# Probabilidades y factores predecidos
+head(predict(clasif.rpart, type = "prob"),10)
+predict(clasif.rpart, type = "class")
+# Respuesta media para regresion
+predict(anova.rpart,peliculas[2555,], type = "vector")
+predict(anova.rpart,peliculas[1268,], type = "vector")
+predict(anova.rpart,peliculas[1150,], type = "vector")
+# Prediccion con random forest
+peliculas.test[2,]
+prediccion.rf<-predict(clasif.randomf, peliculas.test[3,], predict.all=TRUE)
+prediccion.rf[[1]]
+@
+
+Como podemos ver los resultados en las predicciones en las que hemos introducido los datos son coherentes como se ve con las puntuaciones con el random forest o con los prespuestos, estas últimas un poco menos coherentes.
+\end{document}

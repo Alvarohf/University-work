@@ -1,0 +1,537 @@
+
+ tiempo: 1----------INICIO DEL SISTEMA----------
+
+
+ tiempo: 530 |TIEMPO ENTRADA: |519 Vehiculo 66
+
+ tiempo: 539SURTIDORES (1-8):  [Vehiculo 66, , , , , , , ] ENTRADA 
+
+ tiempo: 539--ATENDIDOVehiculo 66 POR Operario 0
+
+ tiempo: 539 NO TENGO COCHE EN ESTE INSTANTE - Operario 2
+
+ tiempo: 539 NO TENGO COCHE EN ESTE INSTANTE - Operario 1
+
+ tiempo: 540 |TIEMPO ENTRADA: |524 Vehiculo 185
+
+ tiempo: 545 |TIEMPO REPOSTAR: |6862 Operario 0
+
+ tiempo: 546SURTIDORES (1-8):  [Vehiculo 66, Vehiculo 185, , , , , , ] ENTRADA 
+
+ tiempo: 546--ATENDIDOVehiculo 185 POR Operario 1
+
+ tiempo: 546 NO TENGO COCHE EN ESTE INSTANTE - Operario 2
+
+ tiempo: 550 |TIEMPO REPOSTAR: |7851 Operario 1
+
+ tiempo: 566 |TIEMPO ENTRADA: |557 Vehiculo 49
+
+ tiempo: 573--ATENDIDOVehiculo 49 POR Operario 2
+
+ tiempo: 573SURTIDORES (1-8):  [Vehiculo 66, Vehiculo 185, Vehiculo 49, , , , , ] ENTRADA 
+
+ tiempo: 574 |TIEMPO ENTRADA: |567 Vehiculo 43
+
+ tiempo: 579 |TIEMPO REPOSTAR: |7483 Operario 2
+
+ tiempo: 580SURTIDORES (1-8):  [Vehiculo 66, Vehiculo 185, Vehiculo 49, Vehiculo 43, , , , ] ENTRADA 
+
+ tiempo: 603 |TIEMPO ENTRADA: |585 Vehiculo 151
+
+ tiempo: 608SURTIDORES (1-8):  [Vehiculo 66, Vehiculo 185, Vehiculo 49, Vehiculo 43, Vehiculo 151, , , ] ENTRADA 
+
+ tiempo: 609 |TIEMPO ENTRADA: |599 Vehiculo 72
+
+ tiempo: 614SURTIDORES (1-8):  [Vehiculo 66, Vehiculo 185, Vehiculo 49, Vehiculo 43, Vehiculo 151, Vehiculo 72, , ] ENTRADA 
+
+ tiempo: 643 |TIEMPO ENTRADA: |628 Vehiculo 184
+
+ tiempo: 648SURTIDORES (1-8):  [Vehiculo 66, Vehiculo 185, Vehiculo 49, Vehiculo 43, Vehiculo 151, Vehiculo 72, Vehiculo 184, ] ENTRADA 
+
+ tiempo: 656 |TIEMPO ENTRADA: |647 Vehiculo 64
+
+ tiempo: 660 |TIEMPO ENTRADA: |650 Vehiculo 100
+
+ tiempo: 662SURTIDORES (1-8):  [Vehiculo 66, Vehiculo 185, Vehiculo 49, Vehiculo 43, Vehiculo 151, Vehiculo 72, Vehiculo 184, Vehiculo 100] ENTRADA 
+
+ tiempo: 667 |TIEMPO ENTRADA: |657 Vehiculo 85
+
+ tiempo: 669 |TIEMPO ENTRADA: |654 Vehiculo 182
+
+ tiempo: 695 |TIEMPO ENTRADA: |681 Vehiculo 165
+
+ tiempo: 704 |TIEMPO ENTRADA: |694 Vehiculo 91
+
+ tiempo: 705 |TIEMPO ENTRADA: |690 Vehiculo 141
+
+ tiempo: 715 |TIEMPO ENTRADA: |707 Vehiculo 52
+
+ tiempo: 747 |TIEMPO ENTRADA: |735 Vehiculo 121
+
+ tiempo: 788 |TIEMPO ENTRADA: |778 Vehiculo 95
+
+ tiempo: 816 |TIEMPO ENTRADA: |801 Vehiculo 158
+
+ tiempo: 837 |TIEMPO ENTRADA: |828 Vehiculo 54
+
+ tiempo: 848 |TIEMPO ENTRADA: |838 Vehiculo 90
+
+ tiempo: 870 |TIEMPO ENTRADA: |859 Vehiculo 116
+
+ tiempo: 876 |TIEMPO ENTRADA: |862 Vehiculo 160
+
+ tiempo: 887 |TIEMPO ENTRADA: |870 Vehiculo 193
+
+ tiempo: 943 |TIEMPO ENTRADA: |934 Vehiculo 59
+
+ tiempo: 947 |TIEMPO ENTRADA: |938 Vehiculo 51
+
+ tiempo: 952 |TIEMPO ENTRADA: |943 Vehiculo 53
+
+ tiempo: 990 |TIEMPO ENTRADA: |977 Vehiculo 133
+
+ tiempo: 1019 |TIEMPO ENTRADA: |1012 Vehiculo 19
+
+ tiempo: 1030 |TIEMPO ENTRADA: |1017 Vehiculo 57
+
+ tiempo: 1038 |TIEMPO ENTRADA: |1021 Vehiculo 190
+
+ tiempo: 1052 |TIEMPO ENTRADA: |1042 Vehiculo 81
+
+ tiempo: 1060 |TIEMPO ENTRADA: |1054 Vehiculo 10
+
+ tiempo: 1101 |TIEMPO ENTRADA: |1095 Vehiculo 5
+
+ tiempo: 1145 |TIEMPO ENTRADA: |1130 Vehiculo 176
+
+ tiempo: 1159 |TIEMPO ENTRADA: |1145 Vehiculo 152
+
+ tiempo: 1191 |TIEMPO ENTRADA: |1181 Vehiculo 101
+
+ tiempo: 1194 |TIEMPO ENTRADA: |1181 Vehiculo 149
+
+ tiempo: 1203 |TIEMPO ENTRADA: |1189 Vehiculo 154
+
+ tiempo: 1220 |TIEMPO ENTRADA: |1215 Vehiculo 14
+
+ tiempo: 1365 |TIEMPO ENTRADA: |1353 Vehiculo 108
+
+ tiempo: 1398 |TIEMPO ENTRADA: |1385 Vehiculo 124
+
+ tiempo: 1403 |TIEMPO ENTRADA: |1395 Vehiculo 46
+
+ tiempo: 1453 |TIEMPO ENTRADA: |1446 Vehiculo 25
+
+ tiempo: 1572 |TIEMPO ENTRADA: |1561 Vehiculo 102
+
+ tiempo: 1610 |TIEMPO ENTRADA: |1600 Vehiculo 75
+
+ tiempo: 1625 |TIEMPO ENTRADA: |1610 Vehiculo 155
+
+ tiempo: 1631 |TIEMPO ENTRADA: |1618 Vehiculo 125
+
+ tiempo: 1638 |TIEMPO ENTRADA: |1626 Vehiculo 114
+
+ tiempo: 1671 |TIEMPO ENTRADA: |1664 Vehiculo 17
+
+ tiempo: 1715 |TIEMPO ENTRADA: |1707 Vehiculo 65
+
+ tiempo: 1799 |TIEMPO ENTRADA: |1789 Vehiculo 87
+
+ tiempo: 1860 |TIEMPO ENTRADA: |1852 Vehiculo 61
+
+ tiempo: 1881 |TIEMPO ENTRADA: |1875 Vehiculo 11
+
+ tiempo: 1886 |TIEMPO ENTRADA: |1871 Vehiculo 166
+
+ tiempo: 1899 |TIEMPO ENTRADA: |1891 Vehiculo 36
+
+ tiempo: 1901 |TIEMPO ENTRADA: |1887 Vehiculo 144
+
+ tiempo: 1909 |TIEMPO ENTRADA: |1895 Vehiculo 146
+
+ tiempo: 1945 |TIEMPO ENTRADA: |1935 Vehiculo 70
+
+ tiempo: 1955 |TIEMPO ENTRADA: |1946 Vehiculo 55
+
+ tiempo: 1979 |TIEMPO ENTRADA: |1973 Vehiculo 13
+
+ tiempo: 1981 |TIEMPO ENTRADA: |1971 Vehiculo 78
+
+ tiempo: 1984 |TIEMPO ENTRADA: |1973 Vehiculo 83
+
+ tiempo: 1998 |TIEMPO ENTRADA: |1982 Vehiculo 169
+
+ tiempo: 2097 |TIEMPO ENTRADA: |2086 Vehiculo 113
+
+ tiempo: 2173 |TIEMPO ENTRADA: |2165 Vehiculo 21
+
+ tiempo: 2207 |TIEMPO ENTRADA: |2195 Vehiculo 177
+
+ tiempo: 2232 |TIEMPO ENTRADA: |2225 Vehiculo 23
+
+ tiempo: 2282 |TIEMPO ENTRADA: |2271 Vehiculo 104
+
+ tiempo: 2317 |TIEMPO ENTRADA: |2303 Vehiculo 163
+
+ tiempo: 2334 |TIEMPO ENTRADA: |2329 Vehiculo 15
+
+ tiempo: 2346 |TIEMPO ENTRADA: |2334 Vehiculo 117
+
+ tiempo: 2364 |TIEMPO ENTRADA: |2358 Vehiculo 1
+
+ tiempo: 2364 |TIEMPO ENTRADA: |2344 Vehiculo 162
+
+ tiempo: 2403 |TIEMPO ENTRADA: |2397 Vehiculo 2
+
+ tiempo: 2523 |TIEMPO ENTRADA: |2516 Vehiculo 33
+
+ tiempo: 2527 |TIEMPO ENTRADA: |2519 Vehiculo 8
+
+ tiempo: 2571 |TIEMPO ENTRADA: |2553 Vehiculo 195
+
+ tiempo: 2585 |TIEMPO ENTRADA: |2577 Vehiculo 41
+
+ tiempo: 2596 |TIEMPO ENTRADA: |2580 Vehiculo 186
+
+ tiempo: 2630 |TIEMPO ENTRADA: |2618 Vehiculo 106
+
+ tiempo: 2643 |TIEMPO ENTRADA: |2627 Vehiculo 180
+
+ tiempo: 2673 |TIEMPO ENTRADA: |2660 Vehiculo 131
+
+ tiempo: 2814 |TIEMPO ENTRADA: |2800 Vehiculo 118
+
+ tiempo: 2817 |TIEMPO ENTRADA: |2810 Vehiculo 60
+
+ tiempo: 2853 |TIEMPO ENTRADA: |2841 Vehiculo 153
+
+ tiempo: 2874 |TIEMPO ENTRADA: |2859 Vehiculo 164
+
+ tiempo: 2908 |TIEMPO ENTRADA: |2903 Vehiculo 3
+
+ tiempo: 2911 |TIEMPO ENTRADA: |2901 Vehiculo 77
+
+ tiempo: 2923 |TIEMPO ENTRADA: |2910 Vehiculo 122
+
+ tiempo: 2994 |TIEMPO ENTRADA: |2978 Vehiculo 174
+
+ tiempo: 3005 |TIEMPO ENTRADA: |2998 Vehiculo 22
+
+ tiempo: 3111 |TIEMPO ENTRADA: |3100 Vehiculo 82
+
+ tiempo: 3153 |TIEMPO ENTRADA: |3139 Vehiculo 142
+
+ tiempo: 3184 |TIEMPO ENTRADA: |3167 Vehiculo 191
+
+ tiempo: 3214 |TIEMPO ENTRADA: |3202 Vehiculo 93
+
+ tiempo: 3238 |TIEMPO ENTRADA: |3225 Vehiculo 178
+
+ tiempo: 3303 |TIEMPO ENTRADA: |3292 Vehiculo 48
+
+ tiempo: 3350 |TIEMPO ENTRADA: |3344 Vehiculo 18
+
+ tiempo: 3390 |TIEMPO ENTRADA: |3378 Vehiculo 111
+
+ tiempo: 3399 |TIEMPO ENTRADA: |3391 Vehiculo 42
+
+ tiempo: 3405 |TIEMPO ENTRADA: |3394 Vehiculo 98
+
+ tiempo: 3414 |TIEMPO ENTRADA: |3401 Vehiculo 129
+
+ tiempo: 3440 |TIEMPO ENTRADA: |3433 Vehiculo 29
+
+ tiempo: 3460 |TIEMPO ENTRADA: |3446 Vehiculo 145
+
+ tiempo: 3463 |TIEMPO ENTRADA: |3447 Vehiculo 179
+
+ tiempo: 3483 |TIEMPO ENTRADA: |3467 Vehiculo 172
+
+ tiempo: 3491 |TIEMPO ENTRADA: |3477 Vehiculo 143
+
+ tiempo: 3546 |TIEMPO ENTRADA: |3539 Vehiculo 37
+
+ tiempo: 3561 |TIEMPO ENTRADA: |3545 Vehiculo 170
+
+ tiempo: 3569 |TIEMPO ENTRADA: |3554 Vehiculo 140
+
+ tiempo: 3580 |TIEMPO ENTRADA: |3570 Vehiculo 89
+
+ tiempo: 3612 |TIEMPO ENTRADA: |3597 Vehiculo 138
+
+ tiempo: 3614 |TIEMPO ENTRADA: |3603 Vehiculo 110
+
+ tiempo: 3616 |TIEMPO ENTRADA: |3610 Vehiculo 24
+
+ tiempo: 3632 |TIEMPO ENTRADA: |3623 Vehiculo 68
+
+ tiempo: 3639 |TIEMPO ENTRADA: |3624 Vehiculo 137
+
+ tiempo: 3683 |TIEMPO ENTRADA: |3670 Vehiculo 123
+
+ tiempo: 3695 |TIEMPO ENTRADA: |3687 Vehiculo 35
+
+ tiempo: 3699 |TIEMPO ENTRADA: |3692 Vehiculo 26
+
+ tiempo: 3702 |TIEMPO ENTRADA: |3686 Vehiculo 173
+
+ tiempo: 3726 |TIEMPO ENTRADA: |3716 Vehiculo 71
+
+ tiempo: 3736 |TIEMPO ENTRADA: |3719 Vehiculo 188
+
+ tiempo: 3748 |TIEMPO ENTRADA: |3738 Vehiculo 28
+
+ tiempo: 3778 |TIEMPO ENTRADA: |3767 Vehiculo 112
+
+ tiempo: 3791 |TIEMPO ENTRADA: |3784 Vehiculo 31
+
+ tiempo: 3830 |TIEMPO ENTRADA: |3822 Vehiculo 39
+
+ tiempo: 3868 |TIEMPO ENTRADA: |3857 Vehiculo 120
+
+ tiempo: 3886 |TIEMPO ENTRADA: |3876 Vehiculo 86
+
+ tiempo: 3892 |TIEMPO ENTRADA: |3878 Vehiculo 183
+
+ tiempo: 3897 |TIEMPO ENTRADA: |3887 Vehiculo 69
+
+ tiempo: 3906 |TIEMPO ENTRADA: |3899 Vehiculo 16
+
+ tiempo: 3921 |TIEMPO ENTRADA: |3916 Vehiculo 6
+
+ tiempo: 3929 |TIEMPO ENTRADA: |3919 Vehiculo 62
+
+ tiempo: 3976 |TIEMPO ENTRADA: |3968 Vehiculo 40
+
+ tiempo: 3976 |TIEMPO ENTRADA: |3962 Vehiculo 159
+
+ tiempo: 3995 |TIEMPO ENTRADA: |3986 Vehiculo 67
+
+ tiempo: 4032 |TIEMPO ENTRADA: |4027 Vehiculo 4
+
+ tiempo: 4057 |TIEMPO ENTRADA: |4047 Vehiculo 76
+
+ tiempo: 4057 |TIEMPO ENTRADA: |4044 Vehiculo 135
+
+ tiempo: 4071 |TIEMPO ENTRADA: |4062 Vehiculo 63
+
+ tiempo: 4126 |TIEMPO ENTRADA: |4118 Vehiculo 45
+
+ tiempo: 4128 |TIEMPO ENTRADA: |4118 Vehiculo 94
+
+ tiempo: 4133 |TIEMPO ENTRADA: |4124 Vehiculo 56
+
+ tiempo: 4133 |TIEMPO ENTRADA: |4120 Vehiculo 132
+
+ tiempo: 4213 |TIEMPO ENTRADA: |4202 Vehiculo 92
+
+ tiempo: 4278 |TIEMPO ENTRADA: |4266 Vehiculo 103
+
+ tiempo: 4307 |TIEMPO ENTRADA: |4292 Vehiculo 156
+
+ tiempo: 4336 |TIEMPO ENTRADA: |4327 Vehiculo 47
+
+ tiempo: 4374 |TIEMPO ENTRADA: |4362 Vehiculo 136
+
+ tiempo: 4388 |TIEMPO ENTRADA: |4381 Vehiculo 20
+
+ tiempo: 4418 |TIEMPO ENTRADA: |4406 Vehiculo 115
+
+ tiempo: 4438 |TIEMPO ENTRADA: |4425 Vehiculo 139
+
+ tiempo: 4560 |TIEMPO ENTRADA: |4546 Vehiculo 168
+
+ tiempo: 4581 |TIEMPO ENTRADA: |4571 Vehiculo 84
+
+ tiempo: 4597 |TIEMPO ENTRADA: |4582 Vehiculo 157
+
+ tiempo: 4679 |TIEMPO ENTRADA: |4674 Vehiculo 12
+
+ tiempo: 4707 |TIEMPO ENTRADA: |4697 Vehiculo 79
+
+ tiempo: 4774 |TIEMPO ENTRADA: |4759 Vehiculo 175
+
+ tiempo: 4785 |TIEMPO ENTRADA: |4768 Vehiculo 189
+
+ tiempo: 4829 |TIEMPO ENTRADA: |4817 Vehiculo 109
+
+ tiempo: 4862 |TIEMPO ENTRADA: |4850 Vehiculo 105
+
+ tiempo: 4915 |TIEMPO ENTRADA: |4907 Vehiculo 50
+
+ tiempo: 4936 |TIEMPO ENTRADA: |4923 Vehiculo 134
+
+ tiempo: 4960 |TIEMPO ENTRADA: |4947 Vehiculo 130
+
+ tiempo: 4970 |TIEMPO ENTRADA: |4958 Vehiculo 126
+
+ tiempo: 5052 |TIEMPO ENTRADA: |5045 Vehiculo 32
+
+ tiempo: 5063 |TIEMPO ENTRADA: |5050 Vehiculo 150
+
+ tiempo: 5087 |TIEMPO ENTRADA: |5078 Vehiculo 27
+
+ tiempo: 5154 |TIEMPO ENTRADA: |5140 Vehiculo 194
+
+ tiempo: 5175 |TIEMPO ENTRADA: |5160 Vehiculo 199
+
+ tiempo: 5218 |TIEMPO ENTRADA: |5212 Vehiculo 7
+
+ tiempo: 5245 |TIEMPO ENTRADA: |5237 Vehiculo 58
+
+ tiempo: 5286 |TIEMPO ENTRADA: |5276 Vehiculo 88
+
+ tiempo: 5364 |TIEMPO ENTRADA: |5355 Vehiculo 74
+
+ tiempo: 5408 |TIEMPO ENTRADA: |5400 Vehiculo 44
+
+ tiempo: 5411 |TIEMPO ENTRADA: |5394 Vehiculo 187
+
+ tiempo: 5422 |TIEMPO ENTRADA: |5407 Vehiculo 167
+
+ tiempo: 5466 |TIEMPO ENTRADA: |5453 Vehiculo 127
+
+ tiempo: 5490 |TIEMPO ENTRADA: |5479 Vehiculo 99
+
+ tiempo: 5500 |TIEMPO ENTRADA: |5484 Vehiculo 192
+
+ tiempo: 5526 |TIEMPO ENTRADA: |5517 Vehiculo 73
+
+ tiempo: 5533 |TIEMPO ENTRADA: |5527 Vehiculo 34
+
+ tiempo: 5534 |TIEMPO ENTRADA: |5522 Vehiculo 128
+
+ tiempo: 5591 |TIEMPO ENTRADA: |5573 Vehiculo 198
+
+ tiempo: 5591 |TIEMPO ENTRADA: |5580 Vehiculo 97
+
+ tiempo: 5685 |TIEMPO ENTRADA: |5671 Vehiculo 161
+
+ tiempo: 5693 |TIEMPO ENTRADA: |5682 Vehiculo 107
+
+ tiempo: 5699 |TIEMPO ENTRADA: |5684 Vehiculo 171
+
+ tiempo: 5743 |TIEMPO ENTRADA: |5729 Vehiculo 181
+
+ tiempo: 5768 |TIEMPO ENTRADA: |5751 Vehiculo 148
+
+ tiempo: 5792 |TIEMPO ENTRADA: |5782 Vehiculo 96
+
+ tiempo: 5805 |TIEMPO ENTRADA: |5791 Vehiculo 147
+
+ tiempo: 5809 |TIEMPO ENTRADA: |5797 Vehiculo 119
+
+ tiempo: 5827 |TIEMPO ENTRADA: |5822 Vehiculo 9
+
+ tiempo: 5842 |TIEMPO ENTRADA: |5835 Vehiculo 38
+
+ tiempo: 5872 |TIEMPO ENTRADA: |5855 Vehiculo 196
+
+ tiempo: 5908 |TIEMPO ENTRADA: |5898 Vehiculo 80
+
+ tiempo: 5918 |TIEMPO ENTRADA: |5900 Vehiculo 200
+
+ tiempo: 5924 |TIEMPO ENTRADA: |5917 Vehiculo 30
+
+ tiempo: 5947 |TIEMPO ENTRADA: |5930 Vehiculo 197
+
+ tiempo: 7416SURTIDORES (1-8):  [Vehiculo 64, Vehiculo 185, Vehiculo 49, Vehiculo 43, Vehiculo 151, Vehiculo 72, Vehiculo 184, Vehiculo 100] ENTRADA 
+
+ tiempo: 7416ABANDONA Vehiculo 66
+
+ tiempo: 7422SURTIDORES (1-8):  [Vehiculo 64, Vehiculo 185, Vehiculo 49, Vehiculo 43, Vehiculo 151, Vehiculo 72, Vehiculo 184, Vehiculo 100] SALIDA 
+
+ tiempo: 7427--ATENDIDOVehiculo 43 POR Operario 0
+
+ tiempo: 7433 |TIEMPO REPOSTAR: |5090 Operario 0
+
+ tiempo: 8066ABANDONA Vehiculo 49
+
+ tiempo: 8067SURTIDORES (1-8):  [Vehiculo 64, Vehiculo 185, Vehiculo 85, Vehiculo 43, Vehiculo 151, Vehiculo 72, Vehiculo 184, Vehiculo 100] ENTRADA 
+
+ tiempo: 8073SURTIDORES (1-8):  [Vehiculo 64, Vehiculo 185, Vehiculo 85, Vehiculo 43, Vehiculo 151, Vehiculo 72, Vehiculo 184, Vehiculo 100] SALIDA 
+
+ tiempo: 8080--ATENDIDOVehiculo 151 POR Operario 2
+
+ tiempo: 8087 |TIEMPO REPOSTAR: |6171 Operario 2
+
+ tiempo: 8407ABANDONA Vehiculo 185
+
+ tiempo: 8408SURTIDORES (1-8):  [Vehiculo 64, Vehiculo 182, Vehiculo 85, Vehiculo 43, Vehiculo 151, Vehiculo 72, Vehiculo 184, Vehiculo 100] ENTRADA 
+
+ tiempo: 8416SURTIDORES (1-8):  [Vehiculo 64, Vehiculo 182, Vehiculo 85, Vehiculo 43, Vehiculo 151, Vehiculo 72, Vehiculo 184, Vehiculo 100] SALIDA 
+
+ tiempo: 8423--ATENDIDOVehiculo 72 POR Operario 1
+
+ tiempo: 8430 |TIEMPO REPOSTAR: |4254 Operario 1
+
+ tiempo: 12531ABANDONA Vehiculo 43
+
+ tiempo: 12540SURTIDORES (1-8):  [Vehiculo 64, Vehiculo 182, Vehiculo 85, , Vehiculo 151, Vehiculo 72, Vehiculo 184, Vehiculo 100] SALIDA 
+
+ tiempo: 12692ABANDONA Vehiculo 72
+
+ tiempo: 12710SURTIDORES (1-8):  [Vehiculo 64, Vehiculo 182, Vehiculo 85, , Vehiculo 151, , Vehiculo 184, Vehiculo 100] SALIDA 
+
+ tiempo: 14267ABANDONA Vehiculo 151
+
+ tiempo: 14276SURTIDORES (1-8):  [Vehiculo 64, Vehiculo 182, Vehiculo 85, , , , Vehiculo 184, Vehiculo 100] SALIDA 
+
+ tiempo: 20370--ATENDIDOVehiculo 64 POR Operario 2
+
+ tiempo: 20371--ATENDIDOVehiculo 184 POR Operario 0
+
+ tiempo: 20371--ATENDIDOVehiculo 100 POR Operario 1
+
+ tiempo: 20371SURTIDORES (1-8):  [Vehiculo 64, Vehiculo 182, Vehiculo 85, Vehiculo 91, , , Vehiculo 184, Vehiculo 100] ENTRADA 
+
+ tiempo: 20372SURTIDORES (1-8):  [Vehiculo 64, Vehiculo 182, Vehiculo 85, Vehiculo 91, Vehiculo 165, Vehiculo 141, Vehiculo 184, Vehiculo 100] ENTRADA 
+
+ tiempo: 20372SURTIDORES (1-8):  [Vehiculo 64, Vehiculo 182, Vehiculo 85, Vehiculo 91, Vehiculo 165, Vehiculo 141, Vehiculo 184, Vehiculo 100] ENTRADA 
+
+ tiempo: 20377 |TIEMPO REPOSTAR: |7185 Operario 0
+
+ tiempo: 20377 |TIEMPO REPOSTAR: |5755 Operario 2
+
+ tiempo: 20377 |TIEMPO REPOSTAR: |7801 Operario 1
+
+ tiempo: 26140ABANDONA Vehiculo 64
+
+ tiempo: 26142SURTIDORES (1-8):  [Vehiculo 52, Vehiculo 182, Vehiculo 85, Vehiculo 91, Vehiculo 165, Vehiculo 141, Vehiculo 184, Vehiculo 100] ENTRADA 
+
+ tiempo: 26150SURTIDORES (1-8):  [Vehiculo 52, Vehiculo 182, Vehiculo 85, Vehiculo 91, Vehiculo 165, Vehiculo 141, Vehiculo 184, Vehiculo 100] SALIDA 
+
+ tiempo: 26155--ATENDIDOVehiculo 85 POR Operario 2
+
+ tiempo: 26163 |TIEMPO REPOSTAR: |4270 Operario 2
+
+ tiempo: 27570ABANDONA Vehiculo 184
+
+ tiempo: 27570SURTIDORES (1-8):  [Vehiculo 52, Vehiculo 182, Vehiculo 85, Vehiculo 91, Vehiculo 165, Vehiculo 141, Vehiculo 121, Vehiculo 100] ENTRADA 
+
+ tiempo: 27576SURTIDORES (1-8):  [Vehiculo 52, Vehiculo 182, Vehiculo 85, Vehiculo 91, Vehiculo 165, Vehiculo 141, Vehiculo 121, Vehiculo 100] SALIDA 
+
+ tiempo: 27583--ATENDIDOVehiculo 182 POR Operario 0
+
+ tiempo: 27590 |TIEMPO REPOSTAR: |6744 Operario 0
+
+ tiempo: 28186ABANDONA Vehiculo 100
+
+ tiempo: 28187SURTIDORES (1-8):  [Vehiculo 52, Vehiculo 182, Vehiculo 85, Vehiculo 91, Vehiculo 165, Vehiculo 141, Vehiculo 121, Vehiculo 95] ENTRADA 
+
+ tiempo: 28193SURTIDORES (1-8):  [Vehiculo 52, Vehiculo 182, Vehiculo 85, Vehiculo 91, Vehiculo 165, Vehiculo 141, Vehiculo 121, Vehiculo 95] SALIDA 
+
+ tiempo: 28200--ATENDIDOVehiculo 91 POR Operario 1
+
+ tiempo: 28207 |TIEMPO REPOSTAR: |6967 Operario 1
+
+ tiempo: 30447ABANDONA Vehiculo 85
+
+ tiempo: 30448SURTIDORES (1-8):  [Vehiculo 52, Vehiculo 182, Vehiculo 158, Vehiculo 91, Vehiculo 165, Vehiculo 141, Vehiculo 121, Vehiculo 95] ENTRADA 
+
+ tiempo: 30456SURTIDORES (1-8):  [Vehiculo 52, Vehiculo 182, Vehiculo 158, Vehiculo 91, Vehiculo 165, Vehiculo 141, Vehiculo 121, Vehiculo 95] SALIDA 
+
+ tiempo: 30463--ATENDIDOVehiculo 165 POR Operario 2
+
+ tiempo: 30472 |TIEMPO REPOSTAR: |5379 Operario 2
